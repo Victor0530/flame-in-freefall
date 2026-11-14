@@ -158,6 +158,39 @@ def render() -> None:
   index must be measured, not inferred from 1-g.
         """
     )
+    st.markdown("#### Where this transfers on Earth")
+    spin = st.columns(3)
+    for col, (title, body, url) in zip(
+        spin,
+        [
+            (
+                "Air tanks",
+                "Composite pressure vessels qualified for crewed spaceflight now serve firefighters and "
+                "breathing-air systems.",
+                "https://spinoff.nasa.gov/node/9582",
+            ),
+            (
+                "Smoke detection",
+                "Low-gravity particle behaviour informed optical and ionization detector design for "
+                "aircraft, submarines, and clean rooms.",
+                "https://spinoff.nasa.gov/node/9407",
+            ),
+            (
+                "Fire-resistant attire",
+                "Flame-resistant textiles developed for crew survival are used by firefighters and "
+                "industrial crews.",
+                "https://spinoff.nasa.gov/node/9918",
+            ),
+        ],
+    ):
+        with col:
+            st.markdown(
+                f'<div class="card"><div class="lab">{title}</div>'
+                f'<div class="body">{body}</div>'
+                f'<div class="note"><a href="{url}">NASA spin-off record ↗</a></div></div>',
+                unsafe_allow_html=True,
+            )
+
     st.caption(
         "Caveat: no PSI experiment tested this exact O₂/pressure combination, and no partial-gravity combustion "
         "dataset exists at habitat scale. This is decision support, not a flammability certification."

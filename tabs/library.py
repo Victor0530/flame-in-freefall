@@ -130,6 +130,26 @@ def render() -> None:
         f"{int((view['gravity'] == 'microgravity').sum())} flight"
     )
 
+    export_cols = [
+        "psi_id",
+        "short_name",
+        "fire_safety_phase",
+        "gravity",
+        "program",
+        "facility",
+        "materials",
+        "key_finding",
+        "safety_implication",
+        "psi_url",
+    ]
+    st.download_button(
+        "Download this view (CSV)",
+        view[export_cols].to_csv(index=False).encode("utf-8"),
+        "flame-in-freefall-records.csv",
+        "text/csv",
+        help="Filtered PSI metadata with links back to each record. Conditions are in the Compare tab.",
+    )
+
     if view.empty:
         st.info("No investigations match these filters. Widen the pillar or clear the search.")
         return
