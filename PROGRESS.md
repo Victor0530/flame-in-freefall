@@ -33,8 +33,8 @@
 |---|---|---|
 | Investigations curated | 12 | 24 (19 flight, 5 ground) |
 | Test-condition rows | 25–30 | 26 (8 numeric investigations) |
-| Sources with URL + locator | 12+ | 24 PSI + 31 NTRS |
-| Corpus passages | 100+ | 198 (23,577 words) |
+| Sources with URL + locator | 12+ | 24 PSI + 54 NTRS |
+| Corpus passages | 100+ | 222 (26,239 words) |
 | Tabs working | 4 | 4 |
 | Reviewed Q&A | 10+ | 6 (+ grounded generation) |
 | Gemini calls tested | 5+ | 4 |
@@ -72,6 +72,7 @@
 | 01:55 | `test_conditions.csv` (26 rows, quoted) + `lib/scoring.py` | — | Compare tab |
 | 02:00 | Compare & Rank with coverage, matrix, weight sliders | — | Corpus |
 | 02:10 | 198-passage corpus + embeddings; advisor with reviewed answers | — | Prompt hardening |
+| 02:35 | Corpus expanded to 222 passages (54 NTRS abstracts); all 8 tests pass | — | Final QA |
 | 02:15 | Prompt v2; grounded answer verified; cache | — | Docs |
 | 02:20 | Offline path verified; 8 tests passing | — | README |
 | 02:30 | README, screenshots, video script, submission copy; pushed | — | Video + deploy |

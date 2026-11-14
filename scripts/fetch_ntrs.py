@@ -19,11 +19,11 @@ QUERIES = {
     "saffire": "Saffire spacecraft fire safety experiment large scale flammability",
     "bass": "BASS burning and suppression of solids microgravity flame spread",
     "same": "smoke aerosol measurement experiment SAME International Space Station",
-    "cfi-g": "coflow laminar diffusion flames microgravity ACME CFI",
-    "slice": "solid fuel ignition combustion experiment SLICE microgravity",
+    "cfi-g": "gaseous coflow diffusion flames microgravity",
+    "slice": "solid fuel ignition extinction",
     "flex": "flame extinguishment experiment FLEX droplet combustion International Space Station",
-    "acme-bre": "ACME burning rate emulator microgravity material flammability",
-    "standards": "flammability configuration analysis spacecraft JSC 29353 oxygen enrichment",
+    "acme-bre": "Burning Rate Emulator",
+    "standards": "JSC 29353",
 }
 
 
@@ -60,6 +60,9 @@ def main() -> None:
             print(f"[warn] {slug}: {exc}")
             continue
         index[slug] = results
+        if not results:
+            print(f"[warn] {slug}: no records, nothing written")
+            continue
         (RAW / f"{slug}.json").write_text(
             json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8"
         )

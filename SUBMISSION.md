@@ -85,7 +85,7 @@ Flame in Freefall is a Streamlit dashboard that makes NASA's Physical Sciences I
 2. **Curate** — every numeric test condition is hand-copied from source text with a quote and locator (`data/test_conditions.csv`).
 3. **Rank** — five documented dimensions (atmosphere match, microgravity evidence, flow, diagnostics, recency); missing data reduces *coverage*, never invents a value.
 4. **Check** — Habitat Checker computes ppO₂ and compares with Test 1 (21.1 kPa) and the exploration atmosphere (19.2 kPa).
-5. **Interpret** — hybrid retrieval (Gemini embeddings + TF-IDF) over 198 passages; six reviewed answers plus grounded generation with `[S#]` citations and a cache.
+5. **Interpret** — hybrid retrieval (Gemini embeddings + TF-IDF) over 222 passages; six reviewed answers plus grounded generation with `[S#]` citations and a cache.
 
 ### Data and sources
 

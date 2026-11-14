@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "20200000361",
+    "title": "Solid Fuel Ignition and Extinction (SoFIE) Project on ISS",
+    "abstract": "The Solid Fuel Ignition and Extinction (SoFIE) project studies ignition and flammability of solid spacecraft materials (fuels) in practical geometries and realistic atmospheric conditions. It is an experiment insert designed for use within the existing Combustion Integrated Rack (CIR). The CIR chamber provides a level of containment and permits testing at variable oxygen concentrations and pressures representative of current and planned NASA Space Exploration Atmospheres. The applications of SoFIE include: (1) Determining safer selection of cabin materials and validating NASA materials flammability selection using 1-g test protocols for low-gravity fires, (2) Improving understanding of early fire growth behavior, (3) Validating material flammability numerical models, (4) Determining optimal suppression techniques for burning materials by diluents, flow reduction, and venting, (5) Obtaining burning behavior of actual engineering materials planned for spacecraft, (6) Developing corresponding models of microgravity flame spread, flammability, and extinction, and use the results to improve normal gravity combustion models for terrestrial applications. The hardware permits a wide range of solid-material combustion and fire suppression studies. It supports multiple investigations using common infrastructure including sample holders, flow control, test sections, external radiant heaters, igniters, and diagnostics. SoFIE has been developed to meet the requirements of five unique investigations. It is currently being built and slated to begin operations on the ISS in July 2021. Given the general capabilities of the hardware insert, it is intended to be used as a facility for future researchers who can propose to NASA for related solid combustion studies.\n\n\n\n",
+    "publications": [
+      {
+        "submissionId": 20200000361,
+        "id": "4b73001b82564e2e8679db7106dc98f8",
+        "publicationDate": "2019-11-20T00:00:00.0000000+00:00"
+      }
+    ],
+    "created": "2020-01-16T10:46:05.0130000+00:00"
+  },
+  {
+    "id": "20250002114",
+    "title": "Solid Fuel Ignition Testing for Lunar Applications, Theory and Experimental Results",
+    "abstract": "To address the risk of enhanced flammability in lunar gravity, NASA has initiated a program to develop a new test method that provides an estimate of the flammability enhancement expected in lunar gravity. An overview of the physical phenomena that control NASA material flammability testing is presented with discussion of how this testing is being adapted to evaluate material flammability in lunar gravity levels. Testing in drop towers and on reduced gravity aircraft has shown that there can be enhanced flammability (flames can exist at lower ambient oxygen concentrations compared to terrestrial gravity) at partial gravity levels close to those found on the moon. This was identified as a risk for the Human Landing System program. However, lunar gravity testing is largely limited to using a centrifuge in the NASA GRC 5.2 second drop tower. This paper discusses the fundamentals of material flammability and extinction and develops a Damköhler-number based estimate of the blow-off flammability limit. This relationship is compared to the results from material flammability tests in a highspeed blow-off facility at the NASA White Sands Test Facility (WSTF) (1-g) and the Glenn Research Center (GRC) Zero Gravity Facility partial gravity centrifuge. ",
+    "publications": [],
+    "created": "2025-02-26T15:53:58.7480960+00:00"
+  },
+  {
+    "id": "20250006779",
+    "title": "Solid Fuel Ignition Testing for Lunar Applications, Theory and Experimental Results",
+    "abstract": "To address the risk of enhanced flammability in lunar gravity, NASA has initiated a program to develop a new test method that provides an estimate of the flammability enhancement expected in lunar gravity. An overview of the physical phenomena that control NASA material flammability testing is presented with discussion of how this testing is being adapted to evaluate material flammability in lunar gravity levels. Testing in drop towers and on reduced gravity aircraft has shown that there can be enhanced flammability (flames can exist at lower ambient oxygen concentrations compared to terrestrial gravity) at partial gravity levels close to those found on the moon. This was identified as a risk for the Human Landing System program. However, lunar gravity testing is largely limited to using a centrifuge in the NASA GRC 5.2 second drop tower. This paper discusses the fundamentals of material flammability and extinction and develops a Damköhler-number based estimate of the blow-off flammability limit. This relationship is compared to the results from material flammability tests in a highspeed blow-off facility at the NASA White Sands Test Facility (WSTF) (1-g) and the Glenn Research Center (GRC) Zero Gravity Facility partial gravity centrifuge. ",
+    "publications": [],
+    "created": "2025-07-03T19:53:17.1494660+00:00"
+  },
+  {
+    "id": "20150008962",
+    "title": "Concurrent Flame Growth, Spread and Extinction over Composite Fabric Samples in Low Speed Purely Forced Flow in Microgravity",
+    "abstract": "As a part of the NASA BASS and BASS-II experimental projects aboard the International Space Station, flame growth, spread and extinction over a composite cotton-fiberglass fabric blend (referred to as the SIBAL fabric) were studied in low-speed concurrent forced flows. The tests were conducted in a small flow duct within the Microgravity Science Glovebox. The fuel samples measured 1.2 and 2.2 cm wide and 10 cm long. Ambient oxygen was varied from 21% down to 16% and flow speed from 40 cm/s down to 1 cm/s. A small flame resulted at low flow, enabling us to observe the entire history of flame development including ignition, flame growth, steady spread (in some cases) and decay at the end of the sample. In addition, by decreasing flow velocity during some of the tests, low-speed flame quenching extinction limits were found as a function of oxygen percentage. The quenching speeds were found to be between 1 and 5 cm/s with higher speed in lower oxygen atmosphere. The shape of the quenching boundary supports the prediction by earlier theoretical models. These long duration microgravity experiments provide a rare opportunity for solid fuel combustion since microgravity time in ground-based facilities is generally not sufficient. This is the first time that a low-speed quenching boundary in concurrent spread is determined in a clean and unambiguous manner.",
+    "publications": [
+      {
+        "submissionId": 20150008962,
+        "id": "1f0452959a7b49d5b3c0c22ddd9eeac0",
+        "publicationDate": "2015-05-17T00:00:00.0000000+00:00"
+      }
+    ],
+    "created": "2015-05-28T08:06:33.7600000+00:00"
+  }
+]

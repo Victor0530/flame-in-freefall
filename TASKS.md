@@ -35,7 +35,7 @@
 
 ### AI
 
-- [x] P0 `chunks.jsonl` (198 passages) and `embeddings.npz` (768-d).
+- [x] P0 `chunks.jsonl` (222 passages) and `embeddings.npz` (768-d).
 - [x] P0 Hybrid retrieval: Gemini embeddings + TF-IDF fallback, relative score filter.
 - [x] P0 `data/faq.json` with 6 human-reviewed answers.
 - [x] P0 Grounded generation with `[S#]` citations and prompt v2 constraints.

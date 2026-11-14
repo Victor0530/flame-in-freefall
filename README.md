@@ -71,7 +71,7 @@ and suppression margins are not established by 1-g testing.
 
 ### Advisor
 
-Hybrid retrieval (Gemini embeddings + TF-IDF fallback) over 198 curated passages from PSI records,
+Hybrid retrieval (Gemini embeddings + TF-IDF fallback) over 222 curated passages from PSI records,
 NTRS abstracts, the 2015 *Researcher's Guide to Combustion Science*, and standards/history
 documents. Answers are either **human-reviewed** (the six suggested questions) or **grounded
 generation** with `[S#]` citations back to the retrieved passage. With no API key it degrades to
@@ -109,7 +109,7 @@ NASA PDFs ────┘   scripts/fetch_ntrs.py                            ├
                   scripts/extract_pdfs.py ─► data/corpus/*.txt     │   app.py
                   data/test_conditions.csv (hand-curated, quoted)  │   ├─ tabs/library.py
                                                                    │   ├─ tabs/compare.py   ◄─ lib/scoring.py
-                  scripts/build_corpus.py ─► chunks.jsonl (198)    │   ├─ tabs/habitat.py
+                  scripts/build_corpus.py ─► chunks.jsonl (222)    │   ├─ tabs/habitat.py
                   scripts/build_embeddings.py ─► embeddings.npz    │   └─ tabs/advisor.py   ◄─ lib/advisor.py
                                                                    └─ data/faq.json (reviewed answers)
 ```

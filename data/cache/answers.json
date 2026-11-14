@@ -1,167 +1,57 @@
 {
-  "9586d7ebe0e4939084e2dcf31bee882f00dda505": {
-    "question": "Which experiments tested flammability at high oxygen concentration?",
-    "answer": "SAFFIRE-II tested flammability at higher oxygen concentrations using multiple solid materials in a microgravity free-flying Cygnus vehicle [S1]. BASS-II extended tests to additional oxygen concentrations using solid fuels (fabrics and plastics) in microgravity aboard the International Space Station [S4]. Cool-flame transitions (ground) conducted ground-based experiments and numerical modeling using ozone-sensitized counterflow flames to study oxygen concentration effects on extinction limits [S2]. The provided passages do not specify the exact oxygen concentration values used in these experiments.",
+  "ce2166f8b162bd76d56aa065898b5d89b82b1377": {
+    "question": "What did the Burning Rate Emulator show about material flammability?",
+    "answer": "Microgravity flight evidence from the Burning-Rate Emulator (BRE) demonstrated that a gas-fueled burner successfully reproduced solid-material burning behavior using gaseous fuel flames [S1]. Ground-based drop facility tests using pure methane and ethylene showed that microgravity BRE tests revealed bubble-like or nominally hemispherical flames with decelerating growth and quasi-steady heat flux [S5, S6]. The passages do not provide evidence regarding the effect of the BRE on material flammability itself, as the BRE uses a gaseous surrogate rather than a burning solid [S1].",
     "sources": [
       {
         "tag": "S1",
-        "label": "PSI record PSI-99 — SAFFIRE-II",
-        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99",
+        "label": "PSI record PSI-20 — ACME BRE",
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-20",
         "locator": "Objectives / Approach",
         "kind": "psidata",
-        "score": 0.917
+        "score": 0.91
       },
       {
         "tag": "S2",
-        "label": "PSI record PSI-142 — Cool-flame transitions (ground)",
-        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142",
-        "locator": "Objectives / Approach",
-        "kind": "psidata",
-        "score": 0.878
-      },
-      {
-        "tag": "S3",
-        "label": "Exploration atmosphere (NTRS 20220009546)",
-        "url": "https://ntrs.nasa.gov/citations/20220009546",
-        "locator": "Exploration atmosphere definition",
-        "kind": "standard",
-        "score": 0.875
-      },
-      {
-        "tag": "S4",
-        "label": "PSI record PSI-25 — BASS-II",
-        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
-        "locator": "Objectives / Approach",
-        "kind": "psidata",
-        "score": 0.864
-      },
-      {
-        "tag": "S5",
-        "label": "PSI record PSI-69 — FLEX",
-        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
-        "locator": "Objectives / Approach",
-        "kind": "psidata",
-        "score": 0.86
-      },
-      {
-        "tag": "S6",
-        "label": "PSI record PSI-100 — SAFFIRE-III",
-        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100",
-        "locator": "Objectives / Approach",
-        "kind": "psidata",
-        "score": 0.858
-      }
-    ],
-    "mode": "gemini"
-  },
-  "c0a6bcdbbf805ec5e718dac34fc2e4b52d51459d": {
-    "question": "Can acrylic burn at 30 percent oxygen in microgravity?",
-    "answer": "Based on the provided passages, there is no microgravity flight evidence, ground evidence, or modelling evidence regarding whether acrylic can burn at 30 percent oxygen. The passages only provide evidence for acrylic burning at 17 percent oxygen [S1, S4] and polymethylmethacrylate (PMMA) rods burning at oxygen concentrations ranging from 14 to 18 by volume [S3].",
-    "sources": [
-      {
-        "tag": "S1",
-        "label": "Researcher's Guide 2015, figure caption, p. 3 — BASS",
-        "url": "https://www.nasa.gov/missions/station/a-researchers-guide-to-combustion-science/",
-        "locator": "Researcher's Guide 2015, figure caption, p. 3",
-        "kind": "condition",
-        "score": 0.935
-      },
-      {
-        "tag": "S2",
-        "label": "NTRS 20160000593 — Combustion of Solids in Microgravity: Results from the BASS-II Experiment",
-        "url": "https://ntrs.nasa.gov/citations/20160000593",
-        "locator": "Abstract",
-        "kind": "ntrs",
-        "score": 0.888
-      },
-      {
-        "tag": "S3",
-        "label": "NTRS 20170006615 — Mixed Convection Blowoff Limits as a Function of Oxygen Concentration and Upward Forced St",
-        "url": "https://ntrs.nasa.gov/citations/20170006615",
-        "locator": "Abstract",
-        "kind": "ntrs",
-        "score": 0.85
-      },
-      {
-        "tag": "S4",
         "label": "Researcher's Guide to Combustion Science (NASA NP-2015-10-034-JSC)",
         "url": "https://www.nasa.gov/missions/station/a-researchers-guide-to-combustion-science/",
-        "locator": "PDF page 2",
+        "locator": "PDF page 18",
         "kind": "guide",
-        "score": 0.849
+        "score": 0.842
       },
       {
-        "tag": "S5",
-        "label": "PSI record PSI-26 — BASS",
-        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
-        "locator": "Objectives / Approach",
-        "kind": "psidata",
+        "tag": "S3",
+        "label": "Researcher's Guide to Combustion Science (NASA NP-2015-10-034-JSC)",
+        "url": "https://www.nasa.gov/missions/station/a-researchers-guide-to-combustion-science/",
+        "locator": "PDF page 6",
+        "kind": "guide",
         "score": 0.839
       },
       {
-        "tag": "S6",
-        "label": "NTRS 20140011099 — Thickness and Fuel Preheating Effects on Material Flammability in Microgravity from the BA",
-        "url": "https://ntrs.nasa.gov/citations/20140011099",
-        "locator": "Abstract",
-        "kind": "ntrs",
-        "score": 0.835
-      }
-    ],
-    "mode": "gemini"
-  },
-  "582068fd2a492be7c667fadab5111aa4cc2bc88c": {
-    "question": "Do cool flames matter for smoke detector choice?",
-    "answer": "No language model available, so this answer quotes the retrieved sources directly. The removal of buoyancy reduces the velocities in the high temperature zones in flames, increasing the residence time of smoke particles and consequently allowing longer growth time for the particles. [S1] Specific objectives were: (1) Identify the laminar smoke-point properties of non-buoyant jet diffusion flames under various co-flow conditions in microgravity. [S3] Key finding: Measured smoke point and soot formation in coflow diffusion flames in low gravity. [S3] Safety implication: Soot yield drives smoke-detector response and material selection. [S3]",
-    "sources": [
-      {
-        "tag": "S1",
-        "label": "NTRS 20070031686 — Particle and Smoke Detection on ISS for Next Generation Smoke Detectors",
-        "url": "https://ntrs.nasa.gov/citations/20070031686",
-        "locator": "Abstract",
-        "kind": "ntrs",
-        "score": 0.796
-      },
-      {
-        "tag": "S2",
-        "label": "Researcher's Guide to Combustion Science (NASA NP-2015-10-034-JSC)",
-        "url": "https://www.nasa.gov/missions/station/a-researchers-guide-to-combustion-science/",
-        "locator": "PDF page 26",
-        "kind": "guide",
-        "score": 0.753
-      },
-      {
-        "tag": "S3",
-        "label": "PSI record PSI-107 — SPICE",
-        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107",
-        "locator": "Objectives / Approach",
-        "kind": "psidata",
-        "score": 0.741
-      },
-      {
         "tag": "S4",
-        "label": "PSI record PSI-142 — Cool-flame transitions (ground)",
-        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142",
-        "locator": "Objectives / Approach",
-        "kind": "psidata",
-        "score": 0.732
+        "label": "NTRS 20200000361 — Solid Fuel Ignition and Extinction (SoFIE) Project on ISS",
+        "url": "https://ntrs.nasa.gov/citations/20200000361",
+        "locator": "Abstract",
+        "kind": "ntrs",
+        "score": 0.837
       },
       {
         "tag": "S5",
-        "label": "PSI-117, Project Type — Cool-flame CFD",
-        "url": "https://psi.nasa.gov/physci/repo/search?q=combustion&data_source=psi&data_type=investigation",
-        "locator": "PSI-117, Project Type",
-        "kind": "condition",
-        "score": 0.731
+        "label": "NTRS 20160010073 — A Burning Rate Emulator (BRE) for Study in Microgravity",
+        "url": "https://ntrs.nasa.gov/citations/20160010073",
+        "locator": "Abstract",
+        "kind": "ntrs",
+        "score": 0.833
       },
       {
         "tag": "S6",
-        "label": "Researcher's Guide to Combustion Science (NASA NP-2015-10-034-JSC)",
-        "url": "https://www.nasa.gov/missions/station/a-researchers-guide-to-combustion-science/",
-        "locator": "PDF page 14",
-        "kind": "guide",
-        "score": 0.73
+        "label": "NTRS 20170009141 — Emulation of Condensed Fuel Flames Using a Burning Rate Emulator (BRE) in Microgravity",
+        "url": "https://ntrs.nasa.gov/citations/20170009141",
+        "locator": "Abstract",
+        "kind": "ntrs",
+        "score": 0.821
       }
     ],
-    "mode": "offline"
+    "mode": "gemini"
   }
 }
