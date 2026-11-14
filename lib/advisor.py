@@ -285,7 +285,7 @@ def ask(question: str, k: int = 6, allow_generation: bool = True) -> dict:
         return {
             "answer": entry["answer"],
             "sources": entry["sources"],
-            "mode": entry.get("mode", "cached"),
+            "mode": "cached",
             "cached": True,
         }
 

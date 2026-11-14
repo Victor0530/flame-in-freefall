@@ -29,6 +29,12 @@
 | D17 | 2026-11-14 | Use 34% O₂ / 56.5 kPa as the Moon/Mars preset; compare against NASA-STD-6001B's 30% / 70.3 kPa Test 1 point; no binary compliance claim | 34% / 70.3 kPa is not a NASA design point; Test 1 is 1-g and not conservative for low-g | Keeping 34% / 70.3 kPa; simple O₂-only score | Accepted |
 | D18 | 2026-11-14 | Library ships all 19 flight investigations from API metadata; hand-curate test conditions only for the core 12 | Metadata is free and strengthens coverage; extraction time stays bounded | Core 12 only; all 24 in depth | Accepted |
 | D19 | 2026-11-14 | Build corpus from NTRS abstract/fulltext `.txt` + PSI objectives + R4, not PSI raw data | Small, citable, fast; avoids 11–33 GB downloads | Raw PSI data processing | Accepted |
+| D20 | 2026-11-15 | Ship all 24 investigations instead of the planned 12 core, keeping the core flag for emphasis | The API returns the full public set; a complete library is a stronger relevance story than a subset | Core 12 only | Accepted |
+| D21 | 2026-11-15 | Rank evidence with a coverage-aware score, not a fire-risk score | Missing conditions must lower coverage, not imply safety or danger; avoids unverifiable risk numbers | Composite risk index; binary pass/fail | Accepted |
+| D22 | 2026-11-15 | Serve six human-reviewed answers before any model call; use prompt v2 with explicit no-invention rules | An early prompt invented a "higher oxygen" Saffire-II claim; reviewed answers and constraints remove that failure mode | Pure generation; no advisor | Accepted |
+| D23 | 2026-11-15 | Hybrid retrieval: Gemini embeddings with TF-IDF fallback, plus a persistent answer cache | Semantic recall for paraphrased questions; offline reliability; repeat demo answers are stable | TF-IDF only; vector search only | Accepted |
+| D24 | 2026-11-15 | Do not use PSI investigation images | All three sampled endpoints returned the same 26,154-byte placeholder PNG | Hotlink placeholders; scrape images elsewhere | Accepted |
+| D25 | 2026-11-15 | MIT licence; captions-only demo video | Permissive reuse for judges; captions are faster to produce and review than voiceover | No licence; narrated video | Accepted |
 
 ---
 

@@ -108,5 +108,60 @@
       }
     ],
     "mode": "gemini"
+  },
+  "582068fd2a492be7c667fadab5111aa4cc2bc88c": {
+    "question": "Do cool flames matter for smoke detector choice?",
+    "answer": "No language model available, so this answer quotes the retrieved sources directly. The removal of buoyancy reduces the velocities in the high temperature zones in flames, increasing the residence time of smoke particles and consequently allowing longer growth time for the particles. [S1] Specific objectives were: (1) Identify the laminar smoke-point properties of non-buoyant jet diffusion flames under various co-flow conditions in microgravity. [S3] Key finding: Measured smoke point and soot formation in coflow diffusion flames in low gravity. [S3] Safety implication: Soot yield drives smoke-detector response and material selection. [S3]",
+    "sources": [
+      {
+        "tag": "S1",
+        "label": "NTRS 20070031686 — Particle and Smoke Detection on ISS for Next Generation Smoke Detectors",
+        "url": "https://ntrs.nasa.gov/citations/20070031686",
+        "locator": "Abstract",
+        "kind": "ntrs",
+        "score": 0.796
+      },
+      {
+        "tag": "S2",
+        "label": "Researcher's Guide to Combustion Science (NASA NP-2015-10-034-JSC)",
+        "url": "https://www.nasa.gov/missions/station/a-researchers-guide-to-combustion-science/",
+        "locator": "PDF page 26",
+        "kind": "guide",
+        "score": 0.753
+      },
+      {
+        "tag": "S3",
+        "label": "PSI record PSI-107 — SPICE",
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107",
+        "locator": "Objectives / Approach",
+        "kind": "psidata",
+        "score": 0.741
+      },
+      {
+        "tag": "S4",
+        "label": "PSI record PSI-142 — Cool-flame transitions (ground)",
+        "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-142",
+        "locator": "Objectives / Approach",
+        "kind": "psidata",
+        "score": 0.732
+      },
+      {
+        "tag": "S5",
+        "label": "PSI-117, Project Type — Cool-flame CFD",
+        "url": "https://psi.nasa.gov/physci/repo/search?q=combustion&data_source=psi&data_type=investigation",
+        "locator": "PSI-117, Project Type",
+        "kind": "condition",
+        "score": 0.731
+      },
+      {
+        "tag": "S6",
+        "label": "Researcher's Guide to Combustion Science (NASA NP-2015-10-034-JSC)",
+        "url": "https://www.nasa.gov/missions/station/a-researchers-guide-to-combustion-science/",
+        "locator": "PDF page 14",
+        "kind": "guide",
+        "score": 0.73
+      }
+    ],
+    "mode": "offline"
   }
 }
