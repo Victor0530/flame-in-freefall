@@ -1,0 +1,194 @@
+{
+  "saffire": [
+    {
+      "id": "20150000894",
+      "title": "Large-Scale Spacecraft Fire Safety Tests",
+      "abstract": "An international collaborative program is underway to address open issues in spacecraft fire safety. Because of limited access to long-term low-gravity conditions and the small volume generally allotted for these experiments, there have been relatively few experiments that directly study spacecraft fire safety under low-gravity conditions. Furthermore, none of these experiments have studied sample sizes and environment conditions typical of those expected in a spacecraft fire. The major constraint has been the size of the sample, with prior experiments limited to samples of the order of 10 cm in length and width or smaller. This lack of experimental data forces spacecraft designers to base their designs and safety precautions on 1-g understanding of flame spread, fire detection, and suppression. However, low-gravity combustion research has demonstrated substantial differences in flame behavior in low-gravity. This, combined with the differences caused by the confined spacecraft environment, necessitates practical scale spacecraft fire safety research to mitigate risks for future space missions. To address this issue, a large-scale spacecraft fire experiment is under development by NASA and an international team of investigators. This poster presents the objectives, status, and concept of this collaborative international project (Saffire). The project plan is to conduct fire safety experiments on three sequential flights of an unmanned ISS re-supply spacecraft (the Orbital Cygnus vehicle) after they have completed their delivery of cargo to the ISS and have begun their return journeys to earth. On two flights (Saffire-1 and Saffire-3), the experiment will consist of a flame spread test involving a meter-scale sample ignited in the pressurized volume of the spacecraft and allowed to burn to completion while measurements are made. On one of the flights (Saffire-2), 9 smaller (5 x 30 cm) samples will be tested to evaluate NASAs material flammability screening tests. The first flight (Saffire-1) is scheduled for July 2015 with the other two following at six-month intervals. A computer modeling effort will complement the experimental effort. Although the experiment will need to meet rigorous safety requirements to ensure the carrier vehicle does not sustain damage, the absence of a crew removes the need for strict containment of combustion products. This will facilitate the first examination of fire behavior on a scale that is relevant to spacecraft fire safety and will provide unique data for fire model validation.",
+      "publications": [
+        {
+          "submissionId": 20150000894,
+          "id": "afcb351f3fa64456897224969e846927",
+          "publicationDate": "2014-08-03T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2015-01-30T13:39:35.9400000+00:00"
+    },
+    {
+      "id": "20170000230",
+      "title": "Operation and Development Status of the Spacecraft Fire Experiments (Saffire)",
+      "abstract": "Since 2012, a series of Spacecraft Fire Experiments (Saffire) have been under development by the Spacecraft Fire Safety Demonstration (SFS Demo) project, funded by NASA's Advanced Exploration Systems Division. The overall objective of this project is to reduce the uncertainty and risk associated with the design of spacecraft fire safety systems for NASA's exploration missions. The approach to achieving this goal has been to define, develop, and conduct experiments that address gaps in spacecraft fire safety knowledge and capabilities identified by NASA's Fire Safety System Maturation Team. The Spacecraft Fire Experiments (Saffire-I, -II, and -III) are material flammability tests at length scales that are realistic for a spacecraft fire in low-gravity. The specific objectives of these three experiments are to (1) determine how rapidly a large scale fire grows in low-gravity and (2) investigate the low-g flammability limits compared to those obtained in NASA's normal gravity material flammability screening test. The experiments will be conducted in Orbital ATK's Cygnus vehicle after it has unberthed from the International Space Station. The tests will be fully automated with the data downlinked at the conclusion of the test before the Cygnus vehicle reenters the atmosphere. This paper discusses the status of the Saffire-I, II, and III experiments followed by a review of the fire safety technology gaps that are driving the development of objectives for the next series of experiments, Saffire-IV, V, and VI.",
+      "publications": [
+        {
+          "submissionId": 20170000230,
+          "id": "dedb00570a6e415487d870ad399c42b0",
+          "publicationDate": "2016-07-10T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2017-01-04T15:25:28.5300000+00:00"
+    },
+    {
+      "id": "20170001636",
+      "title": "The Spacecraft Fire Experiment (Saffire) - Objectives, Development and Status",
+      "abstract": "Since 2012, the Spacecraft Fire Experiment (Saffire) has been under development by the Spacecraft Fire Safety Demonstration (SFS Demo) project that is funded by NASA's Advanced Exploration Systems Division in the Human Exploration and Operations Mission Directorate. The overall objective of this project is to reduce the uncertainty and risk associated with the design of spacecraft fire safety systems for NASA's exploration missions. This is accomplished by defining, developing, and conducting experiments that address gaps in spacecraft fire safety knowledge and capabilities identified by NASA's Fire Safety System Maturation Team. This paper describes the three Spacecraft Fire Experiments (Saffire-I, -II, and -III) that were developed at NASA-GRC and that will conduct a series of material flammability tests in low-gravity and at length scales that are realistic for a spacecraft fire. The experiments will be conducted in Orbital ATK's Cygnus vehicle after it has unberthed from the International Space Station. The tests will be fully automated with the data downlinked at the conclusion of the test and before the Cygnus vehicle reenters the atmosphere. The objectives of these experiments are to (1) determine how rapidly a large scale fire grows in low-gravity and (2) investigate the low-g flammability limits compared to those obtained in NASA's normal gravity material flammability screening test. The hardware for these experiments has been completed and is awaiting their respective launches, all planned for 2016. This paper will review the objectives of these experiments and how they address several of the knowledge gaps for NASA's exploration missions. The hardware development will be discussed including several novel approaches that were taken for testing and evaluation of these series payloads. The status of the missions and operational status will also be presented.",
+      "publications": [
+        {
+          "submissionId": 20170001636,
+          "id": "2056d5ef92b040d0a4dc74176e3e7157",
+          "publicationDate": "2016-05-18T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2017-02-17T11:47:20.1300000+00:00"
+    },
+    {
+      "id": "20170008805",
+      "title": "Results of Large-Scale Spacecraft Flammability Tests",
+      "abstract": "For the first time, a large-scale fire was intentionally set inside a spacecraft while in orbit. Testing in low gravity aboard spacecraft had been limited to samples of modest size: for thin fuels the longest samples burned were around 15 cm in length and thick fuel samples have been even smaller. This is despite the fact that fire is a catastrophic hazard for spaceflight and the spread and growth of a fire, combined with its interactions with the vehicle cannot be expected to scale linearly. While every type of occupied structure on earth has been the subject of full scale fire testing, this had never been attempted in space owing to the complexity, cost, risk and absence of a safe location. Thus, there is a gap in knowledge of fire behavior in spacecraft. The recent utilization of large, unmanned, resupply craft has provided the needed capability: a habitable but unoccupied spacecraft in low earth orbit. One such vehicle was used to study the flame spread over a 94 x 40.6 cm thin charring solid (fiberglasscotton fabric). The sample was an order of magnitude larger than anything studied to date in microgravity and was of sufficient scale that it consumed 1.5 of the available oxygen. The experiment which is called Saffire consisted of two tests, forward or concurrent flame spread (with the direction of flow) and opposed flame spread (against the direction of flow). The average forced air speed was 20 cms. For the concurrent flame spread test, the flame size remained constrained after the ignition transient, which is not the case in 1-g. These results were qualitatively different from those on earth where an upward-spreading flame on a sample of this size accelerates and grows. In addition, a curious effect of the chamber size is noted. Compared to previous microgravity work in smaller tunnels, the flame in the larger tunnel spread more slowly, even for a wider sample. This is attributed to the effect of flow acceleration in the smaller tunnels as a result of hot gas expansion. These results clearly demonstrate the unique features of purely forced flow in microgravity on flame spread, the dependence of flame behavior on the scale of the experiment, and the importance of full-scale testing for spacecraft fire safety.",
+      "publications": [
+        {
+          "submissionId": 20170008805,
+          "id": "1f9f5afa6a884d34b3ebb64b47dca62f",
+          "publicationDate": "2017-07-16T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2017-09-14T12:05:18.3470000+00:00"
+    }
+  ],
+  "bass": [
+    {
+      "id": "20210011385",
+      "title": "Burning and Suppression of Solids\u2013II  (BASS-II) Summary Report",
+      "abstract": "The Burning and Suppression of Solids (BASS) experiment hardware is a small flow duct that\nprovides containment for small scale burning of solid samples within the Microgravity Science Glovebox (MSG) aboard the International Space Station (ISS). A video camera with a data overlay and a 35-mm still camera record the combustion events. The controls (ignition, fan speed, etc.) are operated by an astronaut while the principal investigator team monitors the experiment from the ground and communicates directly with the astronaut. For the first time on ISS, BASS\u2013II utilized MSG working volume dilution with gaseous N2. We developed a perfectly stirred reactor model to determine the N2 flow time and flow rate to obtain the desired reduced O2 concentration in the working volume for each test. We calibrated the model with the Compound Specific Analyzer-Combustion Products (CSA-CP) O2 readings offset using the Major Constituents Analyzer reading of the ISS ambient atmosphere data for that day. This worked out extremely well for operations, and added a new vital variable, ambient O2 level, to our test matrices. The main variables tested in BASS\u2013II were ambient O2 concentration, ventilation flow velocity, and fuel type, thickness, and geometry. BASS\u2013II also utilized the onboard CSA-CP for O2 and CO readings, and the Carbon Dioxide Monitor for CO2 readings before and after each test. Readings from these sensors allow us to evaluate the completeness of the combustion. The O2 and CO2 readings before and after each test were analyzed and compared very well to stoichiometric ratios for a one-step gas-phase reaction. The CO versus CO2 followed a linear trend for some datasets, but not for all the different geometries of fuel and flow tested. We calculated the heat release rates during each test from the O2 consumption and burn times, using the constant 13.1 kJ of heat released per gram of O2 consumed. The results showed that most of the tests had heat release rates well below 100 W. Lastly, the global equivalence ratio for the tests is estimated to be fuel rich, 1.3 on average using mass loss and O2 consumption data.",
+      "publications": [
+        {
+          "submissionId": 20210011385,
+          "id": "276d68fca0784caa82a4df565b3c616c",
+          "publicationDate": "2021-10-01T04:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2021-03-16T15:34:07.9122900+00:00"
+    },
+    {
+      "id": "20160000593",
+      "title": "Combustion of Solids in Microgravity: Results from the BASS-II Experiment",
+      "abstract": "The Burning and Suppression of Solids-II (BASS-II) experiment was performed on the International Space Station. Microgravity combustion tests burned thin and thick flat samples, acrylic slabs, spheres, and cylinders. The samples were mounted inside a small wind tunnel which could impose air flow speeds up to 53 cms. The wind tunnel was installed in the Microgravity Science Glovebox which supplied power, imaging, and a level of containment. The effects of air flow speed, fuel thickness, fuel preheating, and oxygen concentration on flame appearance, growth, spread rate, and extinction were examined in both the opposed and concurrent flow configuration. The flames are quite sensitive to air flow speed in the range 0 to 5 cms. They can be sustained at very low flow speeds of less than 1 cms, when they become dim blue and stable. In this state they are not particularly dangerous from a fire safety perspective, but they can flare up quickly with a sudden increase in air flow speed. Including earlier BASS-I results, well over one hundred tests have been conducted of the various samples in the different geometries, flow speeds, and oxygen concentrations. There are several important implications related to fundamental combustion research as well as spacecraft fire safety. This work was supported by the NASA Space Life and Physical Sciences Research and Applications Division (SLPSRA).",
+      "publications": [
+        {
+          "submissionId": 20160000593,
+          "id": "436859c07a8441408e5429519d7e8fcb",
+          "publicationDate": "2014-10-23T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2016-01-11T15:44:10.7270000+00:00"
+    },
+    {
+      "id": "20140011099",
+      "title": "Thickness and Fuel Preheating Effects on Material Flammability in Microgravity from the BASS Experiment",
+      "abstract": "The Burning and Suppression of Solids (BASS) experiment was performed on the International Space Station. Microgravity combustion tests burning thin and thick flat samples, acrylic spheres, and candles were conducted. The samples were mounted inside a small wind tunnel which could impose air flow speeds up to 40 cms. The wind tunnel was installed in the Microgravity Science Glovebox which supplied power, imaging, and a level of containment. The effects of air flow speed, fuel thickness, fuel preheating, and nitrogen dilution on flame appearance, flame growth, and spread rates were determined in both the opposed and concurrent flow configuration. In some cases, a jet of nitrogen was introduced to attempt to extinguish the flame. Microgravity flames were found to be especially sensitive to air flow speed in the range 0 to 5 cms. The gas phase response is much faster compared to the solid and so as the flow speed is changed, the flame responds with almost no delay. At the lowest speeds examined (less than 1 cms) all the flames tended to become dim blue and very stable. However, heat loss at these very low convective rates is small so the flames can burn for a long time. At moderate flow speeds (between about 1 and 5 cms) the flame continually heats the solid fuel resulting in an increasing fuel temperature, higher rate of fuel vaporization, and a stronger, more luminous flame as time progresses. Only the smallest flames burning acrylic slabs appeared to be adversely influenced by solid conductive heat loss, but even these burned for over 5 minutes before self-extinguishing. This has implications for spacecraft fire safety since a tiny flame might be undetected for a long time. While the small flame is not particularly hazardous if it remains small, the danger is that it might flare up if the air convection is suddenly increased or if the flame spreads into another fuel source.",
+      "publications": [
+        {
+          "submissionId": 20140011099,
+          "id": "0639c906e3564e19ad1b45bfe59065e4",
+          "publicationDate": "2013-11-03T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2014-08-27T09:08:40.5770000+00:00"
+    },
+    {
+      "id": "20170006615",
+      "title": "Mixed Convection Blowoff Limits as a Function of Oxygen Concentration and Upward Forced Stretch Rate for Burning Pmma Rods of Various Sizes",
+      "abstract": "Normal gravity flame blowoff limits in an axisymmetric pmma rod geometry in upward axial stagnation flow are compared with microgravity Burning and Suppression of Solids II (BASS-II) results recently obtained aboard the International Space Station. This testing utilized the same BASS-II concurrent rod geometry, but with the addition of normal gravity buoyant flow. Cast polymethylmethacrylate (pmma) rods of diameters ranging from 0.635 cm to 3.81 cm were burned at oxygen concentrations ranging from 14 to 18 by volume. The forced flow velocity where blowoff occurred was determined for each rod size and oxygen concentration. These blowoff limits compare favorably with the BASS-II results when the buoyant stretch is included and the flow is corrected by considering the blockage factor of the fuel. From these results, the normal gravity blowoff boundary for this axisymmetric rod geometry is determined to be linear, with oxygen concentration directly proportional to flow speed. We describe a new normal gravity upward flame spread test method which extrapolates the linear blowoff boundary to the zero stretch limit to resolve microgravity flammability limits, something current methods cannot do. This new test method can improve spacecraft fire safety for future exploration missions by providing a tractable way to obtain good estimates of material flammability in low gravity.",
+      "publications": [
+        {
+          "submissionId": 20170006615,
+          "id": "95c1941f5d4d4dcaa4717d43992f9907",
+          "publicationDate": "2017-07-16T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2017-07-18T11:26:01.3300000+00:00"
+    }
+  ],
+  "same": [
+    {
+      "id": "20070031686",
+      "title": "Particle and Smoke Detection on ISS for Next Generation Smoke Detectors",
+      "abstract": "Rapid fire detection requires the ability to differentiate fire signatures from background conditions and nuisance sources. Proper design of a fire detector requires detailed knowledge of all of these signal sources so that a discriminating detector can be designed. Owing to the absence of microgravity smoke data, all current spacecraft smoke detectors were designed based upon normal-g conditions. The removal of buoyancy reduces the velocities in the high temperature zones in flames, increasing the residence time of smoke particles and consequently allowing longer growth time for the particles. Recent space shuttle experiments confirmed that, in some cases, increased particles sizes are seen in low-gravity and that the relative performance of the ISS (International Space Station) and space-shuttle smoke-detectors changes in low-gravity; however, sufficient particle size information to design new detectors was not obtained. To address this issue, the SAME (Smoke Aerosol Measurement Experiment) experiment is manifested to fly on the ISS in 2007. The SAME experiment will make measurements of the particle size distribution of the smoke particulate from several typical spacecraft materials providing quantitative design data for spacecraft smoke detectors. A precursor experiment (DAFT: Dust Aerosol measurement Feasibility Test) flew recently on the ISS and provided the first measurement of the background smoke particulate levels on the ISS. These background levels are critical to the design of future smoke detectors. The ISS cabin was found to be a very clean environment with particulate levels substantially below the space shuttle and typical ground-based environments.",
+      "publications": [
+        {
+          "submissionId": 20070031686,
+          "id": "87d2db276ac14f7a800c38801fcb644c",
+          "publicationDate": "2007-05-25T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2013-08-23T23:51:00.0000000+00:00"
+    },
+    {
+      "id": "20220014681",
+      "title": "A Comparison of Stratospheric Smoke Events Seen by SAGE II (1984-2005) and SAGE III (2017-2021)",
+      "abstract": "The ongoing Stratospheric Aerosol and Gas Experiment aboard the International Space Station (SAGE III/ISS) has mostly occurred during a period of relatively low aerosol loading. At the same time, it has almost observed a number of small to moderate injections of volcanic material in the stratosphere from the Aoba/Ambae eruption of 2018 to that of Karymsky in 2022. In addition, two of the largest known smoke intrusions into the stratosphere have occurred during the SAGE III/ISS mission (the British Columbia fire of August 2017 and the Australian Wildfire Event of 2019/2020). At least two other much smaller smoke events have also been observed in the SAGE III data (California Creek in September 2020 and McKay Creek in June 2021).\n\nParticularly with the two large events, it is tempting to speculate that these events are increasing in intensity and frequency possibly due to ongoing climate change. Realistically, change is difficult to assess since instrument data sets that can be used for quantifying historical events can be quite different in what and where they provide measurements. This complicates comparing one event to another potentially separated by many years. An exception to this issues are the measurements by SAGE III/ISS and those of its predecessor SAGE II (1984-2005). Both use the same measurement strategy, measure aerosol extinction coefficient at 1020 nm, and have similar spatial/temporal coverage. Both instruments are known to observe smoke events in the stratosphere. However, both have the same low observation density characteristic of solar occultation such that near-global coverage takes almost a month and characterizing effectively instant events like smoke and volcanic events take a matter of weeks depending on the vagaries of where the observations are being made at a critical juncture unlike instruments with high temporal/spatial resolution like limb-scatter instruments such as OMPS and OSIRIS. The goal of this work will be to use the same analysis approach to both the SAGE II and SAGE III data and compare both the frequency and intensity of smoke events observed by these instruments. While we do not expect to be able to make conclusions about change between the periods, the analysis is a first step in interpreting changes in the contribution of smoke to the stratospheric aerosol budget between the time frames encompassed by these instruments.",
+      "publications": [],
+      "created": "2022-09-28T16:59:45.5221850+00:00"
+    },
+    {
+      "id": "20260009884",
+      "title": "Assessing VIIRS aerosol data assimilation as a MODIS successor in the NASA GEOS system ",
+      "abstract": "Aerosol data assimilation is critical for global Earth system modelling, improving aerosol optical depth (AOD) representation for weather and atmospheric composition forecasts and reanalyses. For two decades, MODIS sensors on Terra and Aqua were the primary observation source for operational aerosol assimilation within the NASA Goddard Earth Observing System (GEOS). As MODIS nears decommission, VIIRS aboard NOAA satellites represent its successor. This transition trades the MODIS morning satellite for VIIRS\u2019s increased data volume, gapless equatorial coverage, and finer spatial resolution. This study assesses the assimilation of VIIRS NOAA-20 AOD within GEOS.  \nTo ensure observing platform consistency, GEOS uses a Neural Network Retrieval (NNR) algorithm translating radiances into AERONET-calibrated AOD, homogenizing MODIS and VIIRS observations before assimilation. Two experiments (March 2019\u2013February 2020) compared a control assimilating NNR MODIS Terra/Aqua against a test assimilating NNR VIIRS NOAA-20. \nValidation against AERONET and Maritime Aerosol Network observations shows that, despite lacking a morning satellite, VIIRS alone performs competitively with combined MODIS, with comparable correlations and error metrics. Relative performance varies by aerosol regime. In dust-dominated environments, VIIRS frequently yields better agreement with AERONET due to finer resolution and greater data volume. During biomass burning, MODIS shows a slight advantage from stronger diurnal constraints on rapidly varying smoke plumes. Both experiments underestimate peak AOD during wildfires (stemming from the \u223c50 km grid artificially diluting concentrated smoke) and in African mixed-aerosol highlands (driven by topographic smoothing). Overall, VIIRS observational density compensates for reduced temporal sampling, supporting a reliable transition for GEOS aerosol forecasting and reanalyses.",
+      "publications": [
+        {
+          "submissionId": 20260009884,
+          "publisher": "Copernicus.org (Germany)",
+          "id": "6d3294db31ba4599b71bca44834196d2",
+          "publicationName": "Atmospheric Chemistry and Physics",
+          "publicationDate": "2026-11-27T05:00:00.0000000+00:00",
+          "url": "",
+          "doi": "10.5194/egusphere-2026-5508"
+        }
+      ],
+      "created": "2026-10-15T16:50:07.4682420+00:00"
+    },
+    {
+      "id": "20190032657",
+      "title": "Characterization and Measurement of Spacecraft Airborne Particulate Matter",
+      "abstract": "The International Space Station (ISS) gives a 6-member astronaut crew the ability to live and work in low Earth orbit. It is a unique indoor environment, which has served as both home and workplace to over 230 people since the year 2000. In this low gravity environment, smoke does not rise and cookie crumbs do not settle the way they do on Earth, causing airborne particulate matter, or aerosols, to behave differently and pose unique hazards for crew members. In its existence, virtually the same volume of ISS air has been continuously conditioned and \u2018revitalized,\u2019 including the removal of particles by filtration. While gaseous constituents of ISS air are monitored meticulously, sparse data exists on the indoor aerosols. The quantity and types of ISS airborne debris have been investigated in NASA\u2019s Aerosol Sampling Experiment. Both active and passive samplers successfully collected airborne particulate matter in U.S. segments of the ISS, which were returned to Earth for characterization by microscopy and other techniques. The resulting data has informed the design of candidate particle instruments for spacecraft. In 2020, a reference-quality aerosol instrument will be flown to ISS, and will provide real-time data of particle concentrations in various modules. Smaller, more compact instruments will be necessary in future space missions, for example, in smaller vehicles, in habitats on lunar and planetary surfaces with ubiquitous dust, and also for use as wearable technology throughout missions. Miniaturized aerosol sensors, though lower fidelity than reference-quality instruments, can monitor the environment well when calibrated appropriately. Indoor air quality in spacecraft is fundamentally important to human health and comfort, and several particulate monitoring technologies will be at sufficient technology readiness levels for operational use within the next two years. Results of the Aerosol Sampling Experiment will be presented, along with the status of NASA\u2019s aerosol instrument technology demonstrations on ISS. \n\n\n\n\n",
+      "publications": [
+        {
+          "submissionId": 20190032657,
+          "id": "9995b5387bf04cafa7775f90d40d7a00",
+          "publicationDate": "2019-10-21T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2019-11-13T13:08:01.1570000+00:00"
+    }
+  ],
+  "cfi-g": [],
+  "slice": [],
+  "flex": [
+    {
+      "id": "20150023456",
+      "title": "Detailed Results from the Flame Extinguishment Experiment (FLEX) March 2009 to December 2011",
+      "abstract": "The Flame Extinguishment Experiment (FLEX) program is a continuing set of experiments on droplet combustion, performed employing the Multi-User Droplet Combustion Apparatus (MDCA), inside the chamber of the Combustion Integrated Rack (CIR), which is located in the Destiny module of the International Space Station (ISS). This report describes the experimental hardware, the diagnostic equipment, the experimental procedures, and the methods of data analysis for FLEX. It also presents the results of the first 284 tests performed. The intent is not to interpret the experimental results but rather to make them available to the entire scientific community for possible future interpretations.",
+      "publications": [
+        {
+          "submissionId": 20150023456,
+          "id": "95c1c9b956684f2b9630a48edee46f55",
+          "publicationDate": "2015-11-01T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2015-12-23T16:24:55.5370000+00:00"
+    },
+    {
+      "id": "20130014061",
+      "title": "Methanol Droplet Combustion in Oxygen-Inert Environments in Microgravity",
+      "abstract": "The Flame Extinguishment (FLEX) experiment that is currently underway in the Combustion Integrated Rack facility onboard the International Space Station is aimed at understanding the effects of inert diluents on the flammability of condensed phase fuels. To this end, droplets of various fuels, including alkanes and alcohols, are burned in a quiescent microgravity environment with varying amounts of oxygen and inert diluents to determine the limiting oxygen index (LOI) for these fuels. In this study we report experimental observations of methanol droplets burning in oxygen-nitrogen-carbon dioxide and oxygen-nitrogen-helium gas mixtures at 0.7 and 1 atmospheric pressures. The initial droplet size varied between approximately 1.5 mm and 4 mm to capture both diffusive extinction brought about by insufficient residence time at the flame and radiative extinction caused by excessive heat loss from the flame zone. The ambient oxygen concentration varied from a high value of 30% by volume to as low as 12%, approaching the limiting oxygen index for the fuel. The inert dilution by carbon dioxide and helium varied over a range of 0% to 70% by volume. In these experiments, both freely floated and tethered droplets were ignited using symmetrically opposed hot-wire igniters and the burning histories were recorded onboard using digital cameras, downlinked later to the ground for analysis. The digital images yielded droplet and flame diameters as functions of time and subsequently droplet burning rate, flame standoff ratio, and initial and extinction droplet diameters. Simplified theoretical models correlate the measured burning rate constant and the flame standoff ratio reasonably well. An activation energy asymptotic theory accounting for time-dependent water dissolution or evaporation from the droplet is shown to predict the measured diffusive extinction conditions well. The experiments also show that the limiting oxygen index for methanol in these diluent gases is around 12% to 13% oxygen by volume.",
+      "publications": [
+        {
+          "submissionId": 20130014061,
+          "id": "2dcfb429b79b42fead5917f1105c361f",
+          "publicationDate": "2013-05-19T00:00:00.0000000+00:00"
+        }
+      ],
+      "created": "2013-08-27T10:16:00.0000000+00:00"
+    }
+  ],
+  "acme-bre": [],
+  "standards": []
+}

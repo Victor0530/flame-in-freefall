@@ -53,6 +53,41 @@ def load_investigations() -> pd.DataFrame:
     return df.sort_values(["gravity", "phase_order", "year_start"], ascending=[True, True, True])
 
 
+@st.cache_data(show_spinner=False)
+def load_conditions() -> pd.DataFrame:
+    path = DATA / "test_conditions.csv"
+    df = pd.read_csv(path, dtype=str, keep_default_na=False)
+    for col in ("o2_pct", "pressure_kpa", "flow_cm_s"):
+        df[col] = pd.to_numeric(df[col].replace("", pd.NA), errors="coerce")
+    return df
+
+
+MATERIAL_KEYWORDS = {
+    "Fabrics": ["fabric", "cloth", "cotton", "nomex", "sibal", "textile", "felt"],
+    "Plastics": ["plastic", "pmma", "acrylic", "polymer", "polyethylene", "polypropylene", "pc"],
+    "Electronics": ["wire", "circuit", "pcb", "electronic", "cable", "connector"],
+    "Paper / packaging": ["paper", "cellulose", "cardboard", "packaging"],
+    "Liquids / fuels": ["fuel", "droplet", "liquid", "heptane", "methanol", "dodecane", "ethanol"],
+}
+
+
+def matches_materials(text: str, selected: list[str]) -> bool:
+    if not selected:
+        return True
+    haystack = (text or "").lower()
+    return any(k in haystack for label in selected for k in MATERIAL_KEYWORDS.get(label, []))
+
+
+@st.cache_data(show_spinner=False)
+def load_faq() -> list[dict]:
+    path = DATA / "faq.json"
+    if not path.exists():
+        return []
+    import json
+
+    return json.loads(path.read_text(encoding="utf-8")).get("items", [])
+
+
 def phase_meta(phase: str) -> dict:
     return PHASES.get(phase, {"label": phase.title(), "icon": "•", "color": "#8b93a7"})
 

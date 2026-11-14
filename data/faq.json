@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "note": "Human-reviewed answers for the suggested questions. Each claim cites a source below; wording is limited to what those sources state.",
+  "items": [
+    {
+      "question": "Which experiments tested flammability at high oxygen concentration?",
+      "answer": "The strongest documented case is ACME BRE, whose published ISS test matrix lists 21% O2 at 14.7 psia, 26.5% at 10.2 psia and 34% at 8.2 psia. It is the only curated flight experiment whose stated matrix includes the exploration atmosphere [S1]. FLEX-2 varied oxygen from 0.1 to 0.4 mole fraction (10-40%) for droplet combustion, which is not material flammability [S2]. Saffire-III used the large SIBAL fabric sample at 30 cm/s flow, but its public record does not state the oxygen concentration [S3]. Most other flight experiments ran at or below 21%. So the 34% material case rests on one flight matrix plus extrapolation, which is exactly where the evidence gap sits.",
+      "sources": [
+        {"tag": "S1", "label": "PSI record PSI-20 - ACME BRE", "url": "https://psi.nasa.gov/physci/repo/investigations/PSI-20", "locator": "Objectives (test matrix)"},
+        {"tag": "S2", "label": "PSI record PSI-68 - FLEX-2", "url": "https://psi.nasa.gov/physci/repo/investigations/PSI-68", "locator": "Approach"},
+        {"tag": "S3", "label": "PSI record PSI-100 - SAFFIRE-III", "url": "https://psi.nasa.gov/physci/repo/investigations/PSI-100", "locator": "Approach"}
+      ]
+    },
+    {
+      "question": "What do we know about smoke detection in microgravity?",
+      "answer": "SAME and SAME-R measured smoke particle-size distributions from representative spacecraft materials in low gravity. Low-gravity smoke particles can grow larger than terrestrial smoke because buoyancy does not remove them quickly [S1]. A shuttle-era comparison also found that the relative performance of ISS and shuttle smoke detectors changes in low gravity [S2]. The practical conclusion is that detector selection should follow the materials actually present, not terrestrial smoke standards.",
+      "sources": [
+        {"tag": "S1", "label": "PSI record PSI-102 - SAME", "url": "https://psi.nasa.gov/physci/repo/investigations/PSI-102", "locator": "Objectives"},
+        {"tag": "S2", "label": "NTRS 20070031686 - Particle and Smoke Detection on ISS", "url": "https://ntrs.nasa.gov/citations/20070031686", "locator": "Abstract"}
+      ]
+    },
+    {
+      "question": "How is a microgravity fire suppressed?",
+      "answer": "Flight evidence is about limits and mechanisms rather than installed systems. BASS and BASS-II showed that flames are highly sensitive to forced flow between 0 and 5 cm/s, can persist below 1 cm/s as dim blue flames, and can be extinguished by nitrogen dilution or increased flow [S1][S2]. FLEX and FLEX-2 mapped droplet extinction, including cool flames that burn at low temperature [S3]. No curated flight experiment tests a fixed suppression system, so hardware margins still rely partly on ground data.",
+      "sources": [
+        {"tag": "S1", "label": "PSI record PSI-26 - BASS", "url": "https://psi.nasa.gov/physci/repo/investigations/PSI-26", "locator": "Approach"},
+        {"tag": "S2", "label": "NTRS 20160000593 - Combustion of Solids in Microgravity: BASS-II", "url": "https://ntrs.nasa.gov/citations/20160000593", "locator": "Abstract"},
+        {"tag": "S3", "label": "PSI record PSI-69 - FLEX", "url": "https://psi.nasa.gov/physci/repo/investigations/PSI-69", "locator": "Objectives"}
+      ]
+    },
+    {
+      "question": "What should a Moon habitat test first?",
+      "answer": "Start with the combination NASA has the least flight data for: material flammability at 34% O2 and 56.5 kPa in low gravity. Only ACME BRE's published matrix includes that atmosphere [S1]. Then quantify ventilation dependence, because flow is a first-order control on spread and extinction in Saffire and BASS-II [S2][S3]. Characterise smoke from the actual materials so detection can be designed against them [S4]. Treat a 1-g screening pass as screening only, not as a low-gravity clearance [S5].",
+      "sources": [
+        {"tag": "S1", "label": "PSI record PSI-20 - ACME BRE", "url": "https://psi.nasa.gov/physci/repo/investigations/PSI-20", "locator": "Objectives"},
+        {"tag": "S2", "label": "NTRS 20170008805 - Results of Large-Scale Spacecraft Flammability Tests", "url": "https://ntrs.nasa.gov/citations/20170008805", "locator": "Abstract"},
+        {"tag": "S3", "label": "PSI record PSI-25 - BASS-II", "url": "https://psi.nasa.gov/physci/repo/investigations/PSI-25", "locator": "Objectives"},
+        {"tag": "S4", "label": "PSI record PSI-102 - SAME", "url": "https://psi.nasa.gov/physci/repo/investigations/PSI-102", "locator": "Objectives"},
+        {"tag": "S5", "label": "NASA-STD-6001B (Test 1)", "url": "https://standards.nasa.gov/standard/NASA/NASA-STD-6001", "locator": "Test 1"}
+      ]
+    },
+    {
+      "question": "How does the 34% oxygen atmosphere compare with NASA-STD-6001 Test 1?",
+      "answer": "Test 1 screens materials in normal-gravity upward flame propagation at 30% O2 and 10.2 psia (70.3 kPa), about 21.1 kPa oxygen partial pressure [S1]. The exploration atmosphere is 34% O2 at 8.2 psia (56.5 kPa), about 19.2 kPa partial pressure [S2]. Total oxygen partial pressure is lower, but the oxygen concentration is higher and low-gravity limits differ, so a Test 1 pass is not a low-gravity clearance. ACME BRE's matrix explicitly includes 34% at 8.2 psia [S3].",
+      "sources": [
+        {"tag": "S1", "label": "NASA-STD-6001B (Test 1)", "url": "https://standards.nasa.gov/standard/NASA/NASA-STD-6001", "locator": "Test 1"},
+        {"tag": "S2", "label": "NTRS 20220009546 - exploration atmosphere", "url": "https://ntrs.nasa.gov/citations/20220009546", "locator": "Atmosphere definition"},
+        {"tag": "S3", "label": "PSI record PSI-20 - ACME BRE", "url": "https://psi.nasa.gov/physci/repo/investigations/PSI-20", "locator": "Objectives"}
+      ]
+    },
+    {
+      "question": "Why is 1-g material screening not sufficient for spacecraft?",
+      "answer": "Test 1 runs in normal gravity, where buoyancy drives upward spread. In microgravity there is no buoyant flow, so ventilation, oxygen fraction and sample scale set the limit instead [S1]. Saffire-I showed a large flame stayed bounded in low gravity where a 1-g flame of that size would accelerate and grow [S2]. BASS showed spread and extinction change sharply at forced flows below 5 cm/s [S3]. A 1-g pass therefore bounds one configuration, not spacecraft conditions.",
+      "sources": [
+        {"tag": "S1", "label": "NASA-STD-6001B (Test 1)", "url": "https://standards.nasa.gov/standard/NASA/NASA-STD-6001", "locator": "Test 1"},
+        {"tag": "S2", "label": "NTRS 20170008805 - Results of Large-Scale Spacecraft Flammability Tests", "url": "https://ntrs.nasa.gov/citations/20170008805", "locator": "Abstract"},
+        {"tag": "S3", "label": "NTRS 20160000593 - BASS-II", "url": "https://ntrs.nasa.gov/citations/20160000593", "locator": "Abstract"}
+      ]
+    }
+  ]
+}

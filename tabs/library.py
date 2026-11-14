@@ -7,7 +7,7 @@ import html
 import pandas as pd
 import streamlit as st
 
-from lib.data import badge, load_investigations, phase_meta
+from lib.data import badge, load_investigations, matches_materials, phase_meta
 
 
 def _card(row, selected: list[str]) -> None:
@@ -86,13 +86,18 @@ def render() -> None:
         "Fire-safety pillar", ["All", "Prevention", "Detection", "Suppression"], default="All"
     ) or "All"
 
-    c1, c2, c3 = st.columns([1.3, 2.6, 1.1])
+    c1, c2, c3 = st.columns([1.2, 2.4, 1.5])
     with c1:
         program = st.selectbox("Program", ["All"] + sorted(df["program"].unique().tolist()))
     with c2:
         query = st.text_input("Search", placeholder="materials, soot, oxygen, smoke, droplet …")
     with c3:
         flight_only = st.toggle("Flight", value=True, help="Show flight experiments only")
+        focus_on = st.toggle(
+            "Materials",
+            value=False,
+            help="Filter to records that mention the material classes selected in the sidebar.",
+        )
 
     view = df.copy()
     if pillar != "All":
@@ -101,6 +106,14 @@ def render() -> None:
         view = view[view["program"] == program]
     if flight_only:
         view = view[view["gravity"] == "microgravity"]
+    focus = st.session_state.get("materials", [])
+    if focus_on and focus:
+        mask = view.apply(
+            lambda r: matches_materials(f"{r['materials']} {r['name']} {r['objective']}", focus),
+            axis=1,
+        )
+        if mask.any():
+            view = view[mask]
     if query:
         q = query.lower()
         mask = view.apply(

@@ -1,139 +1,145 @@
 # SUBMISSION — Flame in Freefall
 
-> Submit early. Keep a backup ZIP of the code and video.
+> **Event:** NASA Space Apps Challenge 2026 (global window Sat 14 Nov 09:00 – Sun 15 Nov 23:59 local)
+> **Repo:** https://github.com/Victor0530/flame-in-freefall
+> **Video:** _[paste unlisted YouTube link]_
+> **App:** _[paste Streamlit Cloud URL once deployed]_
 >
-> **Deadline:** _[confirm local event deadline]_
+> Submit by 20:00 local, then keep the rest of the evening as buffer.
 
 ---
 
-## 1. Submission checklist
+## 1. Checklist
 
 ### Project page
 
-- [ ] Project title.
-- [ ] One-sentence tagline.
-- [ ] Challenge selected.
-- [ ] Team members (solo).
-- [ ] Short description.
-- [ ] How it works.
-- [ ] Data and sources.
-- [ ] Technical approach.
-- [ ] Limitations and caveats.
-- [ ] What is next.
-- [ ] Built with.
-- [ ] Credits.
-- [ ] Repo URL.
-- [ ] Demo URL.
-- [ ] Video URL.
-- [ ] Screenshots.
+- [x] Project title — Flame in Freefall
+- [x] Tagline
+- [x] Challenge selected — Flame in Freefall: SI-Powered Fire Safety Insights from Microgravity Combustion Data
+- [x] Team members — solo (Victor Yang)
+- [x] Short description
+- [x] How it works
+- [x] Data and sources
+- [x] Technical approach
+- [x] Limitations and caveats
+- [x] What is next
+- [x] Built with
+- [x] Credits
+- [x] Repo URL
+- [ ] Demo URL (Streamlit Cloud, after deploy)
+- [ ] Video URL
+- [x] Screenshots (`docs/screenshots/`)
 
 ### Repository
 
-- [ ] Public or judge-accessible.
-- [ ] `README.md` complete.
-- [ ] `requirements.txt` pinned.
-- [ ] `.gitignore` excludes `.venv/`, `.env`, `.streamlit/secrets.toml`.
-- [ ] No API keys or secrets committed.
-- [ ] Fresh clone installs and runs.
-- [ ] Data files and sources included.
-- [ ] License/credits for images and data.
-- [ ] Commit history starts at the event.
+- [x] Public and judge-accessible
+- [x] `README.md` complete
+- [x] `requirements.txt` pinned
+- [x] `.gitignore` excludes `.venv/`, `.env`, `.streamlit/secrets.toml`
+- [x] No API keys committed (`git ls-files` checked)
+- [ ] Fresh clone verified on a clean machine (local venv verified)
+- [x] Data files and sources included
+- [x] License and credits (MIT)
+- [x] Commit history starts inside the event window
 
 ### Demo
 
-- [ ] Local app runs.
-- [ ] Streamlit Cloud app runs.
-- [ ] Offline mode works.
-- [ ] 90-second live demo rehearsed.
-- [ ] 2-minute video recorded and uploaded.
-- [ ] Backup video saved locally.
+- [x] Local app runs
+- [ ] Streamlit Cloud app runs
+- [x] Offline mode works (extractive fallback, reviewed answers)
+- [ ] 90-second live demo rehearsed
+- [ ] 2-minute video recorded and uploaded
+- [ ] Backup video saved
 
 ### Final checks
 
-- [ ] Every number has a source locator.
-- [ ] Units are consistent.
-- [ ] NASA-STD-6001 and >30% O₂ statement checked.
-- [ ] Partial-gravity caveat present.
-- [ ] Prototype disclaimer present.
-- [ ] AI assistance disclosed.
-- [ ] No NASA endorsement implied.
-- [ ] All links tested.
-- [ ] Submission completed before the deadline.
+- [x] Every number has a source locator
+- [x] Units consistent (%, kPa, cm/s, ppO₂)
+- [x] NASA-STD-6001 and >30% O₂ statement checked
+- [x] Partial-gravity caveat present
+- [x] Prototype disclaimer present
+- [x] AI assistance disclosed
+- [x] No NASA endorsement implied
+- [ ] All links tested from a logged-out browser
+- [ ] Submission completed before the deadline
 
 ---
 
-## 2. Project page fields
+## 2. Project page copy
 
 ### Title
 
-**Flame in Freefall — [your subtitle]**
+**Flame in Freefall — Evidence-ranked fire safety for Moon and Mars habitats**
 
 ### Tagline
 
-Turning microgravity combustion data into cited fire-safety design rules for Moon and Mars habitats.
+NASA's microgravity combustion data, turned into cited, evidence-ranked fire-safety decisions — with an explicit answer when the data does not exist.
 
 ### Short description
 
-A Streamlit dashboard that summarizes, compares, ranks, and interprets NASA's microgravity combustion investigations. It combines a mission-context sidebar, an evidence library, matched comparisons, a ppO₂-aware Habitat Checker, and a cited AI advisor.
+Flame in Freefall is a Streamlit dashboard that makes NASA's Physical Sciences Informatics (PSI) combustion collection usable for habitat fire-safety decisions. It covers all 24 public combustion investigations, ranks them against a chosen cabin atmosphere with a transparent score, checks oxygen partial pressure against NASA-STD-6001B envelopes, and answers fire-safety questions with passage-level citations. Where NASA has not published a condition, the app shows the gap instead of guessing.
 
 ### How it works
 
-1. Curated investigation and test-condition data from PSI/NTRS.
-2. Evidence-priority ranking with transparent weights.
-3. Habitat Checker computes ppO₂ and checks NASA-STD-6001 envelopes.
-4. TF-IDF retrieval + Gemini structured answers with citations.
-5. Offline cache for demo reliability.
+1. **Ingest** — PSI JSON API gives all 24 investigations (19 flight, 5 ground); NTRS gives abstracts and full text.
+2. **Curate** — every numeric test condition is hand-copied from source text with a quote and locator (`data/test_conditions.csv`).
+3. **Rank** — five documented dimensions (atmosphere match, microgravity evidence, flow, diagnostics, recency); missing data reduces *coverage*, never invents a value.
+4. **Check** — Habitat Checker computes ppO₂ and compares with Test 1 (21.1 kPa) and the exploration atmosphere (19.2 kPa).
+5. **Interpret** — hybrid retrieval (Gemini embeddings + TF-IDF) over 198 passages; six reviewed answers plus grounded generation with `[S#]` citations and a cache.
 
 ### Data and sources
 
-List PSI IDs, NTRS papers, NASA standards, and image credits. Link to `SOURCES.md`.
+- PSI repository — 24 investigations, metadata and objectives.
+- NTRS — Saffire, BASS, FLEX, SAME, CFI, SLICE, ACME abstracts and full text.
+- NASA-STD-6001B — Test 1 envelope (30% O₂ / 70.3 kPa → 21.1 kPa ppO₂).
+- JSC 29353 — flammability configuration analysis.
+- 2015 Researcher's Guide to Combustion Science.
+- Apollo 1, Apollo 13, Mir fire, NASA spin-off pages for prevention/detection/suppression lessons and Earth applications.
+
+Full table in `SOURCES.md`; provenance and limits in `README.md`.
+
+### Technical approach
+
+Python 3.11, Streamlit 1.67, pandas 3.1, Plotly 7.1, scikit-learn TF-IDF fallback, google-genai 3.0 (`gemini-3.5-flash-lite`, `gemini-embedding-001`). Data is rebuilt by reproducible scripts in `scripts/`; the app reads CSVs at runtime and runs without an API key. Eight pytest smoke tests enforce the data contract (quoted conditions, real investigation IDs, deterministic ranking, coverage behaviour).
 
 ### Limitations
 
-- Prototype, not certified fire-safety guidance.
-- No partial-gravity data in PSI; lunar/Mars extrapolation is bounded, not measured.
-- Some values are estimated from figures and marked as such.
-- Ranking weights are expert-defined, not NASA-endorsed.
-- AI answers are grounded in retrieved sources but should be reviewed.
+- Prototype decision support, not fire-safety certification.
+- No partial-gravity flight data in PSI; lunar/Mars behaviour is bounded by argument, not measured.
+- 1-g upward-propagation screening is not conservative for low gravity.
+- Most public PSI records omit numeric conditions; absence is reported as zero coverage.
+- Ranking weights are expert-defined and adjustable, not NASA-endorsed.
+- AI answers are grounded but require human review.
 
 ### What is next
 
-- Add optional investigations.
-- Expand test-condition extraction.
-- Add partial-gravity data when LUCI/FM2 are available.
-- Validate with fire-safety engineers.
+- Curate the remaining condition rows from NTRS full text as it is digitised.
+- Add partial-gravity data when LUCI/FM2 results are public.
+- Replace expert weights with a sensitivity analysis over multiple stakeholder profiles.
+- Validate the design rules with fire-safety engineers.
+
+### Built with
+
+Python, Streamlit, pandas, Plotly, scikit-learn, google-genai, NASA PSI API, NTRS API, pypdf.
+
+### Credits
+
+Data and imagery © NASA (PSI, NTRS, NASA standards). NASA does not endorse this project. AI coding assistance used; disclosed in the README. MIT licence.
 
 ---
 
-## 3. Two-minute video outline
+## 3. Video
 
-| Time | Content |
-|---|---|
-| 0:00–0:15 | Problem: fire safety in Moon/Mars habitats; PSI data is hard to compare. |
-| 0:15–0:35 | Solution: SI-powered evidence dashboard; four tabs. |
-| 0:35–1:15 | Demo: mission context → library → compare/rank → habitat checker → advisor. |
-| 1:15–1:35 | Technical validity: sources, confidence, ppO₂, NASA-STD-6001, partial-g caveat. |
-| 1:35–1:50 | Impact: design rules, Earth spin-offs. |
-| 1:50–2:00 | Close: evidence → interpretation → safer missions. |
+Script and captions: `docs/VIDEO_SCRIPT.md`. Captions only, ~2 minutes, YouTube unlisted.
 
 ---
 
-## 4. Credits and compliance
-
-- **NASA data:** PSI, NTRS, NASA standards; link each source.
-- **Images:** NASA image URLs and credit lines; do not imply endorsement.
-- **AI:** disclose Gemini usage; label AI-assisted summaries.
-- **License:** choose a permissive license for your code (e.g. MIT) unless the event says otherwise.
-- **Rules:** git history from event start; no pre-work artifacts.
-
----
-
-## 5. Judging map
+## 4. Judging map
 
 | Criterion | Where to point |
 |---|---|
-| **Impact** | Moon/Mars habitat risk, design rules, Earth spin-offs |
-| **Creativity** | SI workflow, evidence ranking, Habitat Checker, cited advisor |
-| **Technical validity** | Source locators, confidence, ppO₂, NASA-STD-6001, partial-g caveat |
-| **Relevance** | Summarize/rank/interpret; prevention/detection/suppression; PSI investigations |
-| **Presentation** | Four-tab story, 90-second demo, clean visuals, video backup |
+| **Impact** | Habitat fire risk; concrete design rules (ventilation, smoke detection, suppression margins); Earth spin-offs from NASA fire technology |
+| **Creativity** | SI workflow from API to cited answer; coverage-aware ranking that refuses to fill gaps; ppO₂-native comparison; advisor that says "not in the evidence base" |
+| **Technical validity** | Quoted conditions with locators; NASA-STD-6001B numbers; 1-g vs low-g caveat; deterministic tests; blank ≠ zero policy |
+| **Relevance** | All 24 PSI combustion investigations; prevention/detection/suppression pillars; summarise, compare, rank, interpret |
+| **Presentation** | Four-tab narrative, screenshots, 2-minute captioned video, README with architecture and limits |

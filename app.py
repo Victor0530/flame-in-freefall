@@ -16,6 +16,8 @@ from lib.data import (  # noqa: E402
     CORE_IDS,
     badge,
     evidence_counts,
+    load_conditions,
+    load_faq,
     load_investigations,
     phase_meta,
 )
@@ -37,8 +39,8 @@ counts = evidence_counts(df)
 
 with st.sidebar:
     st.markdown(
-        '<div style="font-size:1.35rem;font-weight:800;letter-spacing:-.01em;">🔥 Flame in Freefall</div>'
-        '<div class="note" style="margin-bottom:14px;">Microgravity combustion → habitat fire safety</div>',
+        '<div style="font-size:1.12rem;font-weight:800;letter-spacing:-.01em;white-space:nowrap;">🔥 Flame in Freefall</div>'
+        '<div class="note" style="margin-bottom:14px;">Microgravity fire safety, evidence-first</div>',
         unsafe_allow_html=True,
     )
 
@@ -51,7 +53,8 @@ with st.sidebar:
         "Material focus",
         ["Fabrics", "Plastics", "Electronics", "Paper / packaging", "Liquids / fuels"],
         default=["Fabrics", "Plastics"],
-        help="Used to prioritise evidence once numeric test conditions are curated.",
+        key="materials",
+        help="Filters the library to records whose material description mentions the selected classes.",
     )
 
     if st.button("Apply atmosphere to Habitat Checker", width="stretch"):
@@ -82,10 +85,14 @@ with st.sidebar:
 
     st.divider()
     st.markdown("#### Data status")
+    cond = load_conditions()
+    documented = cond[cond["point_type"].isin(["specific", "range"])]["investigation_id"].nunique()
+    faq_count = len(load_faq())
     st.caption(
         f"PSI metadata: **{counts['total']} records** ({counts['flight']} flight)\n\n"
         f"Core investigations: **{counts['core']}/{len(CORE_IDS)}**\n\n"
-        f"Hand-reviewed: **{counts['reviewed']}/{counts['total']}**"
+        f"With numeric conditions: **{documented}**\n\n"
+        f"Reviewed Q&A: **{faq_count}**"
     )
     st.caption(
         "Source: NASA Physical Sciences Informatics. Decision support only — "
@@ -137,3 +144,31 @@ with tab_habitat:
 
 with tab_advisor:
     advisor.render()
+
+st.divider()
+foot1, foot2, foot3 = st.columns(3)
+with foot1:
+    st.markdown("##### Data")
+    st.caption(
+        f"{counts['total']} PSI investigations ({counts['flight']} flight, {len(CORE_IDS)} core), "
+        "NASA-STD-6001B and JSC 29353 for requirements, NTRS abstracts and the 2015 "
+        "Researcher's Guide for context."
+    )
+with foot2:
+    st.markdown("##### Method")
+    st.caption(
+        "Conditions are quoted from source text, never inferred. Ranking drops missing dimensions "
+        "and reports coverage. Advisor answers are reviewed or grounded in retrieved passages."
+    )
+with foot3:
+    st.markdown("##### Limits")
+    st.caption(
+        "Decision support, not flight certification. Public PSI records omit numeric conditions for "
+        "most experiments, and 1-g screening does not bound microgravity behaviour."
+    )
+st.caption(
+    "Built for NASA Space Apps Challenge 2026 · "
+    "[github.com/Victor0530/flame-in-freefall](https://github.com/Victor0530/flame-in-freefall) · "
+    "Data © NASA, used under NASA media guidelines."
+)
+
