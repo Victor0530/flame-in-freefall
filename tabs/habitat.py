@@ -1,4 +1,4 @@
-﻿"""Habitat Checker tab: ppO2, historical envelope, risk framing."""
+"""Habitat Checker tab: ppO2, historical envelope, risk framing."""
 
 from __future__ import annotations
 
@@ -54,7 +54,7 @@ def render() -> None:
     st.markdown("### Habitat Checker")
     st.caption(
         "Set a cabin atmosphere and compare it with the historical NASA-STD-6001B Test 1 point "
-        "and the current exploration atmosphere. Framing only â€” not a certification tool."
+        "and the current exploration atmosphere. Framing only — not a certification tool."
     )
 
     preset = st.selectbox("Start from a preset", list(PRESETS.keys()), index=2)
@@ -76,21 +76,35 @@ def render() -> None:
 
     st.plotly_chart(_gauge(ppo2), width="stretch", config={"displayModeBar": False})
 
-    m1, m2, m3 = st.columns(3)
-    m1.metric("ppOâ‚‚", f"{ppo2:.1f} kPa")
-    m2.metric("Historical Test 1 max", f"{STD_O2_PCT:.0f}% @ {STD_PRESSURE_KPA:.1f} kPa", f"{STD_PPO2_KPA:.1f} kPa ppOâ‚‚")
-    m3.metric("Exploration atmosphere", "34% @ 56.5 kPa", f"{EXPLORATION_PPO2_KPA:.1f} kPa ppOâ‚‚")
+    m1, m2 = st.columns(2)
+    m1.metric(
+        "Test 1 maximum",
+        f"{STD_O2_PCT:.0f}% @ {STD_PRESSURE_KPA:.1f} kPa",
+        help=f"O₂ fraction and total pressure; equivalent to {STD_PPO2_KPA:.1f} kPa ppO₂. 1-g upward propagation test.",
+    )
+    m2.metric(
+        "Exploration atmosphere",
+        "34% @ 56.5 kPa",
+        help=f"Equivalent to {EXPLORATION_PPO2_KPA:.1f} kPa ppO₂.",
+    )
 
     if above_o2 and above_ppo2:
         st.error(
-            f"**Above the historical Test 1 point.** This atmosphere is {o2:.1f}% Oâ‚‚ at {pressure:.1f} kPa "
-            f"({ppo2:.1f} kPa ppOâ‚‚). It exceeds both the 30% Oâ‚‚ concentration and the {STD_PPO2_KPA:.1f} kPa "
-            "ppOâ‚‚ of the NASA-STD-6001B Test 1 envelope."
+            f"**Above the historical Test 1 point on both axes.** {o2:.1f}% O₂ at {pressure:.1f} kPa gives "
+            f"{ppo2:.1f} kPa ppO₂ — more oxygen than the {STD_O2_PCT:.0f}% / {STD_PPO2_KPA:.1f} kPa ppO₂ "
+            "envelope NASA used to screen materials."
         )
-    elif above_o2 or above_ppo2:
+    elif above_o2:
         st.warning(
-            f"**Mixed result.** {'Oxygen concentration' if above_o2 else 'ppOâ‚‚'} exceeds the historical "
-            "Test 1 point while the other does not. Treat the configuration as needing low-gravity evidence."
+            f"**Higher oxygen fraction, lower total pressure.** {o2:.1f}% O₂ at {pressure:.1f} kPa is "
+            f"{ppo2:.1f} kPa ppO₂, just under the {STD_PPO2_KPA:.1f} kPa Test 1 point — but the O₂ "
+            "concentration is above 30%. Test 1 was a 1-g upward-propagation test at a different pressure, "
+            "so it does not clear this combination for low gravity."
+        )
+    elif above_ppo2:
+        st.warning(
+            f"**ppO₂ above the historical Test 1 point.** {ppo2:.1f} kPa exceeds {STD_PPO2_KPA:.1f} kPa even "
+            f"though the O₂ fraction ({o2:.1f}%) is below 30%."
         )
     else:
         st.success(
@@ -102,10 +116,10 @@ def render() -> None:
         f"""
         <div class="rule">
         <b>Why the historical point matters.</b> NASA-STD-6001B Test 1 screened materials at up to
-        {STD_O2_PCT:.0f}% Oâ‚‚ and {STD_PRESSURE_KPA:.1f} kPa ({STD_PPO2_KPA:.1f} kPa ppOâ‚‚) using 1-g upward
+        {STD_O2_PCT:.0f}% O₂ and {STD_PRESSURE_KPA:.1f} kPa ({STD_PPO2_KPA:.1f} kPa ppO₂) using 1-g upward
         flame propagation. Microgravity removes buoyant flow, so a material that passes at 1-g can still
-        burn in orbit. The current exploration atmosphere (34% Oâ‚‚ / 56.5 kPa) sits at
-        {EXPLORATION_PPO2_KPA:.1f} kPa ppOâ‚‚ â€” a higher Oâ‚‚ fraction than Test 1, at lower total pressure.
+        burn in orbit. The current exploration atmosphere (34% O₂ / 56.5 kPa) sits at
+        {EXPLORATION_PPO2_KPA:.1f} kPa ppO₂ — a higher O₂ fraction than Test 1, at lower total pressure.
         </div>
         """,
         unsafe_allow_html=True,
@@ -126,10 +140,10 @@ def render() -> None:
 
     for row in picks:
         meta = phase_meta(row["fire_safety_phase"])
-        with st.expander(f"{meta['icon']} {row['short_name']} â€” {row['key_finding']}"):
+        with st.expander(f"{meta['icon']} {row['short_name']} — {row['key_finding']}"):
             st.markdown(f"**Safety implication.** {row['safety_implication']}")
             st.markdown(f"**Limitation.** {row['limitations']}")
-            st.caption(f"{row['psi_id']} Â· {row['facility']}")
+            st.caption(f"{row['psi_id']} · {row['facility']}")
 
     st.markdown("#### Design rules this view implies")
     st.markdown(
@@ -145,6 +159,6 @@ def render() -> None:
         """
     )
     st.caption(
-        "Caveat: no PSI experiment tested this exact Oâ‚‚/pressure combination, and no partial-gravity combustion "
+        "Caveat: no PSI experiment tested this exact O₂/pressure combination, and no partial-gravity combustion "
         "dataset exists at habitat scale. This is decision support, not a flammability certification."
     )

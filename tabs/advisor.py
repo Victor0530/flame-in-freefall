@@ -1,4 +1,4 @@
-﻿"""Evidence Advisor tab."""
+"""Evidence Advisor tab."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ QUESTIONS = [
 def render() -> None:
     st.markdown("### Evidence Advisor")
     st.caption(
-        "Retrieval-augmented answers over PSI metadata, NASA standards and NTRS abstracts â€” "
+        "Retrieval-augmented answers over PSI metadata, NASA standards and NTRS abstracts — "
         "every sentence traceable to a source."
     )
 
@@ -32,7 +32,7 @@ def render() -> None:
 
     st.info(
         "The advisor is wired to Gemini 3.5 Flash-Lite with TF-IDF retrieval, a cached answer set and an "
-        "extractive offline fallback. It is intentionally disabled until the corpus is built and reviewed â€” "
+        "extractive offline fallback. It is intentionally disabled until the corpus is built and reviewed — "
         "an uncited answer would undercut the project's main claim."
     )
 
@@ -41,11 +41,11 @@ def render() -> None:
             """
 Every generated answer must return structured JSON with:
 
-- **answer** â€” two to four sentences, no numbers without a citation.
-- **key_points** â€” three bullets.
-- **citations** â€” source id, locator and URL.
-- **confidence** â€” high / medium / low.
-- **caveats** â€” especially the partial-gravity gap.
+- **answer** — two to four sentences, no numbers without a citation.
+- **key_points** — three bullets.
+- **citations** — source id, locator and URL.
+- **confidence** — high / medium / low.
+- **caveats** — especially the partial-gravity gap.
 
 If the model is unavailable (no key, quota, offline), the app serves a cached or extractive answer and
 labels it as such. AI-assisted content is marked and human-reviewed before the demo.

@@ -2,8 +2,8 @@
 
 > Update this file at the end of each work block. Keep it factual and timestamped.
 >
-> **Event start:** _[confirm local schedule]_
-> **First commit:** _[fill at event start]_
+> **Event start:** Saturday, November 14, 2026, 09:00 (submission window)
+> **First commit:** 2026-11-15 01:10 (`24d9ea7`)
 
 ---
 
@@ -11,14 +11,14 @@
 
 | Area | Status | Last updated | Notes |
 |---|---|---|---|
-| Compliance / git | Not started | — | Repo initializes at event start |
-| Data curation | Not started | — | 12 core investigations |
-| Sources / citations | In progress | 2026-11-14 19:00 | Resources reviewed; PSI IDs verified via API |
-| Experiment Library | Not started | — | Tab 1 |
-| Compare & Rank | Not started | — | Tab 2 |
-| Habitat Checker | Not started | — | Tab 3 |
-| Evidence Advisor | Not started | — | Tab 4 |
-| Offline mode | Not started | — | Cache + fallback |
+| Compliance / git | Done | 2026-11-15 01:10 | Repo initialized after resources review |
+| Data curation | In progress | 2026-11-15 01:14 | 24 records ingested from PSI API; test conditions pending |
+| Sources / citations | Done | 2026-11-14 19:00 | R1–R10 mapped; PSI IDs verified |
+| Experiment Library | Done (v1) | 2026-11-15 01:20 | Filters, search, comparison selection |
+| Compare & Rank | In progress | 2026-11-15 01:24 | Empty state, matrix; scoring disabled until data |
+| Habitat Checker | Done (v1) | 2026-11-15 01:29 | ppO₂ gauge, Test 1 envelope, design rules |
+| Evidence Advisor | Not started | — | Placeholder; needs corpus + cache |
+| Offline mode | Not started | — | Planned fallback |
 | README | Not started | — | Public documentation |
 | Demo video | Not started | — | 2 minutes |
 | Submission | Not started | — | Submit early |
@@ -31,12 +31,12 @@
 
 | Metric | Target | Actual |
 |---|---|---|
-| Core investigations curated | 12 | 0 |
+| Core investigations curated | 12 | 0 (24 metadata rows loaded) |
 | Test-condition rows | 25–30 | 0 |
-| Sources with URL + locator | 12+ | 0 |
-| Tabs working | 4 | 0 |
+| Sources with URL + locator | 12+ | 24 PSI records |
+| Tabs working | 4 | 3 (Advisor placeholder) |
 | Cached Q&A | 10+ | 0 |
-| Gemini calls tested | 5+ | 0 |
+| Gemini calls tested | 5+ | 1 (key + model verified) |
 | Offline-mode tests | 1 | 0 |
 | Bugs open | 0 | 0 |
 
@@ -46,9 +46,7 @@
 
 | Time | Done | Blocker | Next |
 |---|---|---|---|
-| | Resources read | | |
-| | Resource map updated | | |
-| | | | |
+| — | Resources release read (R1–R10 mapped in `RESOURCE_REVIEW.md`) | — | Wait for event start |
 
 ---
 
@@ -56,7 +54,8 @@
 
 | Time | Done | Blocker | Next |
 |---|---|---|---|
-| 19:00 | Official resources read; PSI API + IDs verified | Repo not initialized | Init git, pull PSI metadata, start data |
+| 19:00 | Official resources read; PSI API + IDs verified | Repo not initialized | Init git, pull PSI metadata |
+| 23:30 | Scope confirmed: core 12 + 19-flight library | — | Build after key |
 
 > Day-1 morning block did not happen; schedule replanned in `RESOURCE_REVIEW.md` §7.
 
@@ -66,12 +65,10 @@
 
 | Time | Done | Blocker | Next |
 |---|---|---|---|
-| 09:00 | QA started | | |
-| 10:30 | UI polish | | |
-| 12:00 | Demo rehearsal | | |
-| 13:00 | Video recording | | |
-| 14:30 | Submission page | | |
-| 16:00 | Submitted | | |
+| 00:45 | Gemini key verified; `gemini-3.5-flash-lite` responds | — | Repo init |
+| 01:10 | Git initialized; first commit `24d9ea7` | — | PSI ingestion |
+| 01:14 | PSI ingestion: 24 records → `data/investigations.csv` | — | Dashboard shell |
+| 01:30 | Dashboard v1: sidebar, KPIs, Library, Habitat Checker | Curated test conditions missing | Build `test_conditions.csv` |
 
 ---
 
@@ -79,9 +76,9 @@
 
 | # | Blocker | Impact | Workaround | Status |
 |---|---|---|---|---|
-| 1 | | | | Open |
-| 2 | | | | Open |
-| 3 | | | | Open |
+| 1 | Test conditions not curated | No numeric comparison or ranking | Ship metadata-only evidence view; curate 24 points | Open |
+| 2 | No corpus / AI yet | Advisor disabled | TF-IDF + Gemini with cache | Open |
+| 3 | Deadline 23:59 today | Fixed | Submit by 20:00 | Open |
 
 ---
 
@@ -89,22 +86,22 @@
 
 | Time | Commit | What changed |
 |---|---|---|
-| | | |
+| 2026-11-15 01:10 | `24d9ea7` | Initialize repo with planning docs and resource review |
+| 2026-11-15 01:14 | `8684191` | PSI ingestion script + `investigations.csv` (24 records) |
+| 2026-11-15 01:22 | `9876e43` | Dashboard shell: four tabs, theme, library, habitat |
 
 ---
 
 ## Compliance evidence
 
-Record this so the project history clearly shows work happened during the event.
-
 | Item | Value |
 |---|---|
 | Local event official start | 2026-11-14 09:00 (submission window per spaceappschallenge.org) |
-| Repo initialized | |
-| First commit | |
+| Repo initialized | 2026-11-15 01:10 |
+| First commit | 2026-11-15 01:10 (`24d9ea7`) |
 | First project file created | 2026-11-14 19:00 (`RESOURCE_REVIEW.md`, `SOURCES.md`, `DECISIONS.md` updates) |
 | Resources read | 2026-11-14 19:00 |
-| Submission time | |
+| Submission time | — |
 
 ---
 
@@ -112,13 +109,13 @@ Record this so the project history clearly shows work happened during the event.
 
 ### Day 1
 
-- [ ] App runs from a fresh terminal.
+- [x] App runs from a fresh terminal.
 - [ ] Data validates.
-- [ ] At least two tabs work.
+- [x] At least two tabs work.
 - [ ] Advisor returns one cited answer.
 - [ ] Offline fallback exists.
-- [ ] Commit made.
-- [ ] Blockers listed for Day 2.
+- [x] Commit made.
+- [x] Blockers listed for Day 2.
 
 ### Day 2
 

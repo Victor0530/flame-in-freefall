@@ -1,4 +1,4 @@
-﻿"""Experiment Library tab."""
+"""Experiment Library tab."""
 
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ def _card(row, selected: list[str]) -> None:
           <div>{tags}</div>
           <h4>{html.escape(row['short_name'])}</h4>
           <div class="full">{html.escape(row['name'])}</div>
-          <div class="meta">{html.escape(row['facility'] or 'â€”')} &nbsp;Â·&nbsp; {html.escape(years or 'dates n/a')} &nbsp;Â·&nbsp; {html.escape(row['psi_id'])}</div>
+          <div class="meta">{html.escape(row['facility'] or '—')} &nbsp;·&nbsp; {html.escape(years or 'dates n/a')} &nbsp;·&nbsp; {html.escape(row['psi_id'])}</div>
           <div class="lab">Key finding</div>
           <div class="body">{html.escape(row['key_finding'])}</div>
           <div class="lab">Safety implication</div>
@@ -46,11 +46,11 @@ def _card(row, selected: list[str]) -> None:
         unsafe_allow_html=True,
     )
 
-    cols = st.columns([1, 1, 1.2])
+    cols = st.columns(2)
     in_compare = row["id"] in selected
     with cols[0]:
         if st.button(
-            "In comparison âœ“" if in_compare else "Add to compare",
+            "Compare +" if not in_compare else "Added ✓",
             key=f"add_{row['id']}",
             disabled=in_compare or len(selected) >= 4,
             width="stretch",
@@ -60,14 +60,16 @@ def _card(row, selected: list[str]) -> None:
             st.toast(f"Added {row['short_name']} to comparison")
             st.rerun()
     with cols[1]:
-        st.link_button("PSI record â†—", row["psi_url"], width="stretch")
-    with cols[2]:
-        with st.expander("Details & limits"):
-            st.markdown(f"**Objective.** {row['objective']}")
-            st.markdown(f"**Materials.** {row['materials']}")
-            st.markdown(f"**Measured.** {row['measured_variables']}")
-            st.markdown(f"**Limitations.** {row['limitations']}")
-            st.caption(f"Confidence: {row['confidence']} Â· reviewed: {row['reviewed']} Â· {row['notes']}")
+        st.link_button("PSI record ↗", row["psi_url"], width="stretch")
+
+    with st.expander("Details & limits"):
+        st.markdown(f"**Objective.** {row['objective']}")
+        st.markdown(f"**Materials.** {row['materials']}")
+        st.markdown(f"**Measured.** {row['measured_variables']}")
+        st.markdown(f"**Limitations.** {row['limitations']}")
+        st.caption(
+            f"Confidence: {row['confidence']} · reviewed: {row['reviewed']} · {row['notes']}"
+        )
 
 
 def render() -> None:
@@ -80,17 +82,17 @@ def render() -> None:
         "Metadata is pulled live from the PSI repository; numeric conditions are curated separately."
     )
 
-    c1, c2, c3, c4 = st.columns([2.4, 1.5, 2.6, 1.4])
+    pillar = st.segmented_control(
+        "Fire-safety pillar", ["All", "Prevention", "Detection", "Suppression"], default="All"
+    ) or "All"
+
+    c1, c2, c3 = st.columns([1.3, 2.6, 1.1])
     with c1:
-        pillar = st.segmented_control(
-            "Pillar", ["All", "Prevention", "Detection", "Suppression"], default="All"
-        ) or "All"
-    with c2:
         program = st.selectbox("Program", ["All"] + sorted(df["program"].unique().tolist()))
+    with c2:
+        query = st.text_input("Search", placeholder="materials, soot, oxygen, smoke, droplet …")
     with c3:
-        query = st.text_input("Search", placeholder="materials, soot, oxygen, smoke, droplet â€¦")
-    with c4:
-        flight_only = st.toggle("Flight only", value=True)
+        flight_only = st.toggle("Flight", value=True, help="Show flight experiments only")
 
     view = df.copy()
     if pillar != "All":
@@ -111,7 +113,7 @@ def render() -> None:
         view = view[mask]
 
     st.caption(
-        f"{len(view)} of {len(df)} records Â· {int(view['is_core'].sum())} core Â· "
+        f"{len(view)} of {len(df)} records · {int(view['is_core'].sum())} core · "
         f"{int((view['gravity'] == 'microgravity').sum())} flight"
     )
 

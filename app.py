@@ -1,4 +1,4 @@
-﻿"""Flame in Freefall â€” SI-powered fire safety insights from microgravity combustion data."""
+"""Flame in Freefall — SI-powered fire safety insights from microgravity combustion data."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Flame in Freefall",
-    page_icon="ðŸ”¥",
+    page_icon="🔥",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -14,7 +14,6 @@ st.set_page_config(
 from lib import theme  # noqa: E402
 from lib.data import (  # noqa: E402
     CORE_IDS,
-    PRESETS,
     badge,
     evidence_counts,
     load_investigations,
@@ -25,10 +24,10 @@ from tabs import advisor, compare, habitat, library  # noqa: E402
 theme.apply()
 
 DESTINATIONS = {
-    "Moon habitat": (34.0, 56.5, "34% Oâ‚‚ / 8.2 psia exploration atmosphere"),
-    "Mars transit": (34.0, 56.5, "34% Oâ‚‚ / 8.2 psia exploration atmosphere"),
-    "ISS (current)": (21.0, 101.3, "21% Oâ‚‚ / 14.7 psia cabin air"),
-    "EMU spacesuit": (100.0, 29.6, "100% Oâ‚‚ / 4.3 psia"),
+    "Moon habitat": (34.0, 56.5, "34% O₂ / 8.2 psia exploration atmosphere"),
+    "Mars transit": (34.0, 56.5, "34% O₂ / 8.2 psia exploration atmosphere"),
+    "ISS (current)": (21.0, 101.3, "21% O₂ / 14.7 psia cabin air"),
+    "EMU spacesuit": (100.0, 29.6, "100% O₂ / 4.3 psia"),
 }
 
 st.session_state.setdefault("selected", [])
@@ -38,8 +37,8 @@ counts = evidence_counts(df)
 
 with st.sidebar:
     st.markdown(
-        '<div style="font-size:1.35rem;font-weight:800;letter-spacing:-.01em;">ðŸ”¥ Flame in Freefall</div>'
-        '<div class="note" style="margin-bottom:14px;">Microgravity combustion â†’ habitat fire safety</div>',
+        '<div style="font-size:1.35rem;font-weight:800;letter-spacing:-.01em;">🔥 Flame in Freefall</div>'
+        '<div class="note" style="margin-bottom:14px;">Microgravity combustion → habitat fire safety</div>',
         unsafe_allow_html=True,
     )
 
@@ -63,7 +62,8 @@ with st.sidebar:
     ppo2 = o2_default / 100 * p_default
     st.markdown(
         f'<div class="kpi"><div class="n">{ppo2:.1f} kPa</div>'
-        f'<div class="l">ppOâ‚‚ Â· {o2_default:.0f}% at {p_default:.1f} kPa</div></div>',
+        f'<div class="l">Oxygen partial pressure</div>'
+        f'<div class="note">{o2_default:.0f}% at {p_default:.1f} kPa</div></div>',
         unsafe_allow_html=True,
     )
 
@@ -88,7 +88,7 @@ with st.sidebar:
         f"Hand-reviewed: **{counts['reviewed']}/{counts['total']}**"
     )
     st.caption(
-        "Source: NASA Physical Sciences Informatics. Decision support only â€” "
+        "Source: NASA Physical Sciences Informatics. Decision support only — "
         "not a flammability certification."
     )
 
@@ -97,7 +97,7 @@ st.markdown(
     <div class="hero">
       <h1>Flame in Freefall</h1>
       <p>NASA's microgravity combustion experiments, turned into evidence-ranked fire-safety decisions for
-      Moon and Mars habitats â€” with a citation behind every claim, and an explicit answer when the data
+      Moon and Mars habitats — with a citation behind every claim, and an explicit answer when the data
       does not exist.</p>
     </div>
     """,
@@ -108,10 +108,10 @@ k = st.columns(4)
 for col, (value, label) in zip(
     k,
     [
-        (counts["total"], "PSI investigations"),
-        (counts["flight"], "Flight experiments"),
-        (counts["core"], "Core deep-curated"),
-        (len(PRESETS), "Atmosphere presets"),
+        (counts["total"], "Records"),
+        (counts["flight"], "Flight"),
+        (counts["core"], "Core"),
+        (3, "Pillars"),
     ],
 ):
     with col:
@@ -123,7 +123,7 @@ for col, (value, label) in zip(
 st.write("")
 
 tab_library, tab_compare, tab_habitat, tab_advisor = st.tabs(
-    ["ðŸ“š Experiment Library", "âš–ï¸ Compare & Rank", "ðŸ›¡ï¸ Habitat Checker", "ðŸ’¬ Evidence Advisor"]
+    ["📚 Library", "⚖️ Compare", "🛡️ Habitat Checker", "💬 Advisor"]
 )
 
 with tab_library:

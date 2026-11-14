@@ -1,4 +1,4 @@
-﻿"""Compare & Rank tab."""
+"""Compare & Rank tab."""
 
 from __future__ import annotations
 
@@ -29,7 +29,7 @@ def render() -> None:
             rows = df[df["id"].isin(selected)]
             for row in rows.to_dict("records"):
                 meta = phase_meta(row["fire_safety_phase"])
-                st.markdown(f"- {meta['icon']} **{row['short_name']}** â€” {row['key_finding']}")
+                st.markdown(f"- {meta['icon']} **{row['short_name']}** — {row['key_finding']}")
         return
 
     rows = df[df["id"].isin(selected)].to_dict("records")
@@ -44,7 +44,7 @@ def render() -> None:
                 <div class="card">
                   <div>{badge(meta['label'], meta['color'])}{badge('Flight' if row['gravity']=='microgravity' else 'Ground', '#8b93a7')}</div>
                   <h4>{html.escape(row['short_name'])}</h4>
-                  <div class="meta">{html.escape(row['facility'])} Â· {html.escape(row['psi_id'])}</div>
+                  <div class="meta">{html.escape(row['facility'])} · {html.escape(row['psi_id'])}</div>
                   <div class="lab">Key finding</div>
                   <div class="body">{html.escape(row['key_finding'])}</div>
                   <div class="lab">Implication</div>
@@ -60,7 +60,7 @@ def render() -> None:
             {
                 "Investigation": r["short_name"],
                 "Pillar": phase_meta(r["fire_safety_phase"])["label"],
-                "Gravity": "Âµg" if r["gravity"] == "microgravity" else "1g",
+                "Gravity": "µg" if r["gravity"] == "microgravity" else "1g",
                 "Facility": r["facility"],
                 "Materials": r["materials"],
                 "Limitation": r["limitations"],
@@ -71,7 +71,7 @@ def render() -> None:
     st.dataframe(matrix, width="stretch", hide_index=True)
 
     st.markdown("#### Evidence-priority score")
-    st.caption("Placeholder weights â€” will be applied to curated test conditions, not to metadata.")
+    st.caption("Placeholder weights — will be applied to curated test conditions, not to metadata.")
     w1, w2, w3 = st.columns(3)
     w1.slider("Directness to your atmosphere", 0.0, 1.0, 0.45, 0.05)
     w2.slider("Flight vs ground evidence", 0.0, 1.0, 0.35, 0.05)

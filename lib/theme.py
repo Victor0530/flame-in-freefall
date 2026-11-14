@@ -44,7 +44,7 @@ p, li, label, span { color: var(--text); }
   border-radius: 14px; padding: 14px 16px; height: 100%;
 }
 .kpi .n { font-size: 1.65rem; font-weight: 700; color: var(--text); line-height: 1.1; }
-.kpi .l { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.kpi .l { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 .card {
   border: 1px solid var(--line); background: var(--panel);
   border-radius: 14px; padding: 16px 18px; margin-bottom: 12px;
