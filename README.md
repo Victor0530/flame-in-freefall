@@ -187,7 +187,7 @@ tabs/habitat.py            ppO₂ checker, design rules
 tabs/advisor.py            Advisor UI
 scripts/                   Data acquisition and corpus build
 data/                      Curated CSVs, corpus, embeddings, cache, reviewed answers
-docs/                      Screenshots and demo script
+docs/screenshots/          Screenshots used in this README
 tests/                     Data-contract and ranking tests
 ```
 
