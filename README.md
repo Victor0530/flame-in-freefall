@@ -24,8 +24,6 @@ the ventilation conditions of a spacecraft cabin.
 
 ## What the app does
 
-![Experiment library](docs/screenshots/library.png)
-
 Four linked views, one evidence base:
 
 | Tab | Question it answers |
@@ -57,8 +55,6 @@ Missing dimensions are **dropped** and reported as reduced *coverage* — never 
 assumed value. At the exploration atmosphere (34% O₂ / 56.5 kPa), ACME BRE ranks first because
 its published test matrix includes that exact point, not because it is "safer."
 
-![Compare and rank](docs/screenshots/compare.png)
-
 ### Habitat Checker
 
 Computes ppO₂ from O₂ fraction and total pressure, plots it against the historical
@@ -67,8 +63,6 @@ atmosphere (34% O₂ at 56.5 kPa → 19.2 kPa ppO₂). It then derives design ru
 evidence: ventilation changes spread and extinction, smoke particle sizes differ in low gravity,
 and suppression margins are not established by 1-g testing.
 
-![Habitat checker](docs/screenshots/habitat.png)
-
 ### Advisor
 
 Hybrid retrieval (Gemini embeddings + TF-IDF fallback) over 222 curated passages from PSI records,
@@ -76,8 +70,6 @@ NTRS abstracts, the 2015 *Researcher's Guide to Combustion Science*, and standar
 documents. Answers are either **human-reviewed** (the six suggested questions) or **grounded
 generation** with `[S#]` citations back to the retrieved passage. With no API key it degrades to
 extractive quoting, and previously answered questions are cached.
-
-![Evidence advisor](docs/screenshots/advisor.png)
 
 ## Data and provenance
 
@@ -187,7 +179,6 @@ tabs/habitat.py            ppO₂ checker, design rules
 tabs/advisor.py            Advisor UI
 scripts/                   Data acquisition and corpus build
 data/                      Curated CSVs, corpus, embeddings, cache, reviewed answers
-docs/screenshots/          Screenshots used in this README
 tests/                     Data-contract and ranking tests
 ```
 
