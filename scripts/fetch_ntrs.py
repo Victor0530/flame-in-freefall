@@ -32,9 +32,20 @@ def fetch(query: str, size: int = 4) -> list[dict]:
         "https://ntrs.nasa.gov/api/citations/search?"
         + urllib.parse.urlencode({"q": query, "page.size": size})
     )
-    req = urllib.request.Request(url, headers={"User-Agent": "flame-in-freefall/1.0"})
-    with urllib.request.urlopen(req, timeout=45) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
+    last_error: Exception | None = None
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "flame-in-freefall/1.0"})
+            with urllib.request.urlopen(req, timeout=45) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            break
+        except Exception as exc:  # transient network error
+            last_error = exc
+            if attempt == 2:
+                raise
+    else:  # pragma: no cover - loop always breaks or raises
+        raise last_error or RuntimeError("NTRS request failed")
+
     out = []
     for item in data.get("results", []):
         out.append(
@@ -47,6 +58,12 @@ def fetch(query: str, size: int = 4) -> list[dict]:
             }
         )
     return out
+
+
+def _write_atomic(path: Path, text: str) -> None:
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    tmp.replace(path)
 
 
 def main() -> None:
@@ -71,9 +88,9 @@ def main() -> None:
             if not r["abstract"]:
                 continue
             lines.append(f"# {r['title']}\nNTRS {r['id']}\n\n{r['abstract']}\n")
-        (CORPUS / f"ntrs_{slug}.txt").write_text("\n".join(lines), encoding="utf-8")
+        _write_atomic(CORPUS / f"ntrs_{slug}.txt", "\n".join(lines))
         print(f"{slug}: {len(results)} records, {len(lines)} with abstracts")
-    (RAW / "index.json").write_text(json.dumps(index, indent=2), encoding="utf-8")
+    _write_atomic(RAW / "index.json", json.dumps(index, indent=2))
 
 
 if __name__ == "__main__":

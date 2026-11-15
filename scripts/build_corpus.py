@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import re
 from pathlib import Path
 
@@ -236,10 +237,21 @@ def main() -> None:
     docs.extend(STANDARDS)
     for doc in docs:
         doc["text"] = clean(doc["text"])
+
+    ids = [doc["id"] for doc in docs]
+    if len(ids) != len(set(ids)):
+        duplicates = sorted({i for i in ids if ids.count(i) > 1})
+        raise SystemExit(f"duplicate passage ids: {duplicates[:10]}")
+    empty = [doc["id"] for doc in docs if not doc["text"].strip()]
+    if empty:
+        raise SystemExit(f"passages with empty text: {empty[:10]}")
+
     out = CORPUS / "chunks.jsonl"
-    with out.open("w", encoding="utf-8") as fh:
+    tmp = out.with_suffix(".tmp")
+    with tmp.open("w", encoding="utf-8") as fh:
         for doc in docs:
             fh.write(json.dumps(doc, ensure_ascii=False) + "\n")
+    os.replace(tmp, out)
     words = sum(len(d["text"].split()) for d in docs)
     print(f"wrote {len(docs)} passages, {words:,} words -> {out}")
 

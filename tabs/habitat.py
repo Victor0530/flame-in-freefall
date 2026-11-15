@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import math
+
+import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
@@ -17,21 +20,23 @@ from lib.data import (
 
 
 def _gauge(ppo2: float) -> go.Figure:
+    # The old fixed 0-40 kPa scale clipped valid inputs such as 100% O2 at 1 atm.
+    upper = max(40.0, math.ceil(ppo2 / 10.0) * 10.0)
     fig = go.Figure(
         go.Indicator(
             mode="gauge+number",
             value=ppo2,
             number={"suffix": " kPa", "font": {"size": 42, "color": "#e8ecf7"}},
-            title={"text": "Oxygen partial pressure", "font": {"size": 14, "color": "#98a3bd"}},
+            title={"text": "Oxygen partial pressure", "font": {"size": 14, "color": "#a7b1c8"}},
             gauge={
-                "axis": {"range": [0, 40], "tickcolor": "#5a6580", "tickfont": {"color": "#98a3bd"}},
+                "axis": {"range": [0, upper], "tickcolor": "#5a6580", "tickfont": {"color": "#a7b1c8"}},
                 "bar": {"color": "#ff7a3d", "thickness": 0.28},
                 "bgcolor": "#0d1322",
                 "borderwidth": 0,
                 "steps": [
                     {"range": [0, 16], "color": "#16324a"},
-                    {"range": [16, 21.1], "color": "#1d4a3a"},
-                    {"range": [21.1, 40], "color": "#4a2020"},
+                    {"range": [16, STD_PPO2_KPA], "color": "#1d4a3a"},
+                    {"range": [STD_PPO2_KPA, upper], "color": "#4a2020"},
                 ],
                 "threshold": {
                     "line": {"color": "#ffc46b", "width": 3},
@@ -50,19 +55,51 @@ def _gauge(ppo2: float) -> go.Figure:
     return fig
 
 
+def _status(above_o2: bool, above_ppo2: bool) -> tuple[str, str, str]:
+    if above_o2 and above_ppo2:
+        return (
+            "bad",
+            "▲",
+            "Above the historical Test 1 point on both axes",
+        )
+    if above_o2:
+        return (
+            "warn",
+            "▲",
+            "Higher O₂ fraction, lower total pressure",
+        )
+    if above_ppo2:
+        return (
+            "warn",
+            "▲",
+            "ppO₂ above the historical Test 1 point",
+        )
+    return ("good", "▼", "Below the historical Test 1 point on both axes")
+
+
 def render() -> None:
-    st.markdown("### Habitat Checker")
+    st.markdown("## Habitat Checker")
     st.caption(
         "Set a cabin atmosphere and compare it with the historical NASA-STD-6001B Test 1 point "
         "and the current exploration atmosphere. Framing only — not a certification tool."
     )
 
-    preset = st.selectbox("Start from a preset", list(PRESETS.keys()), index=2)
+    preset = st.selectbox(
+        "Start from a preset",
+        list(PRESETS.keys()),
+        index=list(PRESETS.keys()).index("Exploration (34% / 8.2 psia)"),
+        key="habitat_preset",
+    )
     default_o2, default_p = PRESETS[preset]
     if st.session_state.get("_preset") != preset:
         st.session_state["o2_pct"] = float(default_o2)
         st.session_state["pressure_kpa"] = float(default_p)
         st.session_state["_preset"] = preset
+
+    if st.button(f"Reset sliders to {preset}"):
+        st.session_state["o2_pct"] = float(default_o2)
+        st.session_state["pressure_kpa"] = float(default_p)
+        st.rerun()
 
     c1, c2 = st.columns(2)
     with c1:
@@ -73,10 +110,18 @@ def render() -> None:
     ppo2 = o2 / 100 * pressure
     above_o2 = o2 > STD_O2_PCT
     above_ppo2 = ppo2 > STD_PPO2_KPA
+    tone, icon, headline = _status(above_o2, above_ppo2)
 
     st.plotly_chart(_gauge(ppo2), width="stretch", config={"displayModeBar": False})
+    st.caption(
+        f"Gauge: {ppo2:.1f} kPa ppO₂. Green zone ends at the Test 1 point ({STD_PPO2_KPA:.1f} kPa); "
+        "red is above it. The gauge scale expands for high-pressure or high-oxygen inputs."
+    )
+    st.markdown(
+        f'<div class="status {tone}">{icon} {headline}</div>', unsafe_allow_html=True
+    )
 
-    m1, m2 = st.columns(2)
+    m1, m2, m3 = st.columns(3)
     m1.metric(
         "Test 1 maximum",
         f"{STD_O2_PCT:.0f}% @ {STD_PRESSURE_KPA:.1f} kPa",
@@ -86,6 +131,11 @@ def render() -> None:
         "Exploration atmosphere",
         "34% @ 56.5 kPa",
         help=f"Equivalent to {EXPLORATION_PPO2_KPA:.1f} kPa ppO₂.",
+    )
+    m3.metric(
+        "Difference from Test 1 ppO₂",
+        f"{ppo2 - STD_PPO2_KPA:+.1f} kPa",
+        help="Positive means your atmosphere carries more oxygen partial pressure than the historical Test 1 point.",
     )
 
     if above_o2 and above_ppo2:
@@ -125,7 +175,45 @@ def render() -> None:
         unsafe_allow_html=True,
     )
 
-    st.markdown("#### What the evidence says")
+    st.markdown("### Atmosphere comparison")
+    table_rows = [
+        {
+            "Atmosphere": "Your input",
+            "O₂ %": o2,
+            "Pressure kPa": pressure,
+            "ppO₂ kPa": ppo2,
+            "O₂ above 30%": "Yes" if above_o2 else "No",
+            "ppO₂ above 21.1": "Yes" if above_ppo2 else "No",
+        }
+    ]
+    for name, (p_o2, p_pressure) in PRESETS.items():
+        p_ppo2 = p_o2 / 100 * p_pressure
+        table_rows.append(
+            {
+                "Atmosphere": name,
+                "O₂ %": p_o2,
+                "Pressure kPa": p_pressure,
+                "ppO₂ kPa": round(p_ppo2, 1),
+                "O₂ above 30%": "Yes" if p_o2 > STD_O2_PCT else "No",
+                "ppO₂ above 21.1": "Yes" if p_ppo2 > STD_PPO2_KPA else "No",
+            }
+        )
+    st.dataframe(
+        pd.DataFrame(table_rows),
+        width="stretch",
+        hide_index=True,
+        column_config={
+            "O₂ %": st.column_config.NumberColumn(format="%.1f"),
+            "Pressure kPa": st.column_config.NumberColumn(format="%.1f"),
+            "ppO₂ kPa": st.column_config.NumberColumn(format="%.1f"),
+        },
+    )
+    st.caption(
+        "The Test 1 comparison is a two-axis screening check, not a pass/fail certification. "
+        "A lower ppO₂ does not cancel a higher O₂ fraction."
+    )
+
+    st.markdown("### What the evidence says")
     df = load_investigations()
     df = df[(df["gravity"] == "microgravity")].copy()
     picks = []
@@ -143,9 +231,9 @@ def render() -> None:
         with st.expander(f"{meta['icon']} {row['short_name']} — {row['key_finding']}"):
             st.markdown(f"**Safety implication.** {row['safety_implication']}")
             st.markdown(f"**Limitation.** {row['limitations']}")
-            st.caption(f"{row['psi_id']} · {row['facility']}")
+            st.caption(f"{row['psi_id']} · {row['facility']} · open the Library to compare the full record")
 
-    st.markdown("#### Design rules this view implies")
+    st.markdown("### Design rules this view implies")
     st.markdown(
         """
 - **Do not treat a 1-g pass as low-g clearance.** Require microgravity or partial-gravity evidence for
@@ -158,7 +246,7 @@ def render() -> None:
   index must be measured, not inferred from 1-g.
         """
     )
-    st.markdown("#### Where this transfers on Earth")
+    st.markdown("### Where this transfers on Earth")
     spin = st.columns(3)
     for col, (title, body, url) in zip(
         spin,

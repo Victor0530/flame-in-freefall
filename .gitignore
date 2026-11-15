@@ -7,6 +7,7 @@ __pycache__/
 # Environment / secrets
 .env
 .streamlit/secrets.toml
+.opencode/
 
 # OS
 .DS_Store
@@ -20,7 +21,6 @@ ChallengeRef.txt
 /PROGRESS.md
 /DECISIONS.md
 /RESOURCE_REVIEW.md
-/SUBMISSION.md
 /DATA_SCHEMA.md
 /SOURCES.md
 /ChallengeResource.txt

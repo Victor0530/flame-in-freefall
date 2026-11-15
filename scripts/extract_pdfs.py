@@ -27,6 +27,12 @@ def get(url: str, timeout: int = 120) -> bytes:
         return resp.read()
 
 
+def _write_atomic(path: Path, text: str) -> None:
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    tmp.replace(path)
+
+
 def main() -> None:
     RAW.mkdir(parents=True, exist_ok=True)
     CORPUS.mkdir(parents=True, exist_ok=True)
@@ -39,7 +45,7 @@ def main() -> None:
         reader = PdfReader(str(path))
         text = "\n".join((page.extract_text() or "") for page in reader.pages)
         out = CORPUS / (path.stem + ".txt")
-        out.write_text(text, encoding="utf-8")
+        _write_atomic(out, text)
         print(f"{name}: {len(reader.pages)} pages, {len(text)} chars -> {out.name}")
 
     for name, url in PAGES.items():
@@ -53,7 +59,7 @@ def main() -> None:
         text = re.sub(r"[ \t]+", " ", text)
         text = re.sub(r"\n\s*\n+", "\n", text)
         out = CORPUS / (path.stem + ".txt")
-        out.write_text(text, encoding="utf-8")
+        _write_atomic(out, text)
         print(f"{name}: {len(text)} chars -> {out.name}")
 
 
